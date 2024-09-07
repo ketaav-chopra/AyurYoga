@@ -1,39 +1,84 @@
 <!DOCTYPE html>
-<html>
-<body>
-</body>
-</html>
-
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Image Display</title>
     <style>
-        body {
-            background-color: lightgray;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Flexbox container for three sections */
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* Each section will take up 1/3 of the height */
+        .section {
+            flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
-            margin: 0;
         }
 
+        /* Background colors for each section */
+        .limegreen {
+            background-color: limegreen;
+        }
+
+        .green {
+            background-color: green;
+        }
+
+        .darkgreen {
+            background-color: darkgreen;
+        }
+
+        /* Image styling */
         img {
             max-width: 100%;
             height: auto;
-            border: 2px solid black;
+            border: 2px solid white;
             border-radius: 10px;
+        }
+
+        /* Optional: Section title styling */
+        h1 {
+            color: white;
+            font-size: 2em;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
 <body>
 
-    <!-- Insert your image here -->
-    <img src="Screenshot 2024-09-07 111347.png" alt="Screenshot 2024-09-07 111347.png">
+    <div class="container">
+        <!-- Section 1: Lime Green -->
+        <div class="section limegreen">
+            <h1>Lime Green Section</h1>
+        </div>
+
+        <!-- Section 2: Green -->
+        <div class="section green">
+            <!-- Image in the green section -->
+            <img src="Screenshot 2024-09-07 111347.png" alt="Screenshot Image">
+        </div>
+
+        <!-- Section 3: Dark Green -->
+        <div class="section darkgreen">
+            <h1>Dark Green Section</h1>
+        </div>
+    </div>
 
 </body>
 </html>
-
