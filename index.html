@@ -22,4 +22,66 @@
     <p>I am a cool boy.</p>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website with Top Section</title>
+    <style>
+        /* Reset margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* The full body of the website */
+        html, body {
+            height: 100%;
+        }
+
+        /* Top section style */
+        .top-section {
+            height: 20%; /* Takes up 20% of the page height */
+            background-color: lightblue; /* Change this to any color */
+            width: 100%; /* Full width */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Main content below the top section */
+        .main-content {
+            height: 80%; /* Remaining 80% of the page */
+            background-color: lightgreen;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #fff;
+        }
+
+        p {
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top section that occupies 20% of the page -->
+    <div class="top-section">
+        <h1>This is the Top Section (20% height)</h1>
+    </div>
+
+    <!-- Main content that occupies the remaining 80% of the page -->
+    <div class="main-content">
+        <p>Welcome to the main content area (80% height).</p>
+    </div>
+</body>
+</html>
+
+
 
