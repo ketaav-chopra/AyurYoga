@@ -1,50 +1,80 @@
 <!DOCTYPE html>
+<html>
+<body>
+<h1>Hello World</h1>
+<p>I'm hosted with GitHub Pages.</p>
+</body>
+</html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Display</title>
+    <title>Herb Leaves Website</title>
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+        }
+
+        /* Container for the entire page */
+        .container {
+            height: 100%;
+        }
+
+        /* Top 80% section with lime green background */
+        .top-section {
+            height: 80%;
+            background-color: limegreen;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            flex-direction: column;
         }
 
-        .container {
-            text-align: center;
+        /* Bottom 20% section with white background */
+        .bottom-section {
+            height: 20%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        /* Image Styling */
+        /* Image styling */
         img {
-            width: 300px; /* Adjust the size accordingly */
+            max-width: 100%;
             height: auto;
-            border-radius: 10px;
-            border: 2px solid #333;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin-bottom: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Caption Styling */
-        .caption {
-            font-size: 1.2em;
-            color: #333;
-            margin-top: 10px;
+        /* Text for the bottom section */
+        .bottom-text {
+            font-size: 1.5em;
+            color: black;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Image Display -->
-        <img src="image.png" alt="Beautiful Image">
-        <!-- Caption for the Image -->
-        <div class="caption">This is a beautifully displayed image.</div>
+        <!-- Top 80% Section -->
+        <div class="top-section">
+            <!-- Image of herb leaves -->
+            <img src="herb-leaves.jpg" alt="Herb Leaves Image">
+        </div>
+
+        <!-- Bottom 20% Section -->
+        <div class="bottom-section">
+            <div class="bottom-text">Welcome to the Herb Leaves Page</div>
+        </div>
     </div>
 
 </body>
