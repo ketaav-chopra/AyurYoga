@@ -13,11 +13,9 @@
 
         body, html {
             height: 100%;
-            font-family: 'Poppins', sans-serif; /* Abstract font */
+            font-family: 'Poppins', sans-serif; 
             background-color: #f4f4f9;
         }
-
-        /* Styling for colorful sections */
         .section {
             display: flex;
             flex-direction: column;
@@ -30,7 +28,7 @@
         }
 
         .abstract-font {
-            font-family: 'Abril Fatface', cursive; /* Abstract font for headings */
+            font-family: 'Abril Fatface', cursive; 
             font-size: 3rem;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             letter-spacing: 1.5px;
@@ -49,7 +47,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* Scroll-down button styling */
+        /* Scroll-down button styling(with chat gpt) */
         .scroll-down-btn {
             position: absolute;
             bottom: 20px;
@@ -63,24 +61,18 @@
             cursor: pointer;
             transition: background 0.3s ease, transform 0.3s ease;
         }
-
         .scroll-down-btn:hover {
             background: rgba(0, 0, 0, 0.8);
             transform: scale(1.1);
         }
-
-        /* Add image styling */
         .image-container {
             margin: 20px 0;
         }
-
         .image-container img {
             width: 50%;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
-
-        /* Styling for the second section */
         .second-section {
             background: linear-gradient(135deg, #5A3F37, #2C7744);
         }
@@ -101,17 +93,13 @@
     </style>
 </head>
 <body>
-
-    <!-- First Section with multiple colors and abstract font -->
     <div class="section multi-color-bg">
         <h1 class="abstract-font">Welcome to Ayeryoga</h1>
         <div class="image-container">
-            <img src="download (1).jpg" alt="download (1).jpg"> <!-- Add your image here -->
+            <img src="download (1).jpg" alt="download (1).jpg"> 
         </div>
         <div class="scroll-down-btn" onclick="scrollToNextSection()">Scroll Down</div>
     </div>
-
-    <!-- Second Section with different colors -->
     <div class="section second-section">
         <h1 class="abstract-font">Discover Your Inner Peace</h1>
         <p style="color:white; font-size: 1.5rem;">Explore our services to help you relax and rejuvenate.</p>
