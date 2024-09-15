@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Click to Next Page</title>
+    <script>
+        document.addEventListener('dblclick', function () {
+            // Replace with the URL of the next page
+            window.location.href = "nextpage.html";
+        });
+    </script>
+</head>
+<body>
+    <h1>Double Click Anywhere to Go to the Next Page</h1>
+</body>
+</html>
+
