@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayeryoga - Modern Design</title>
+    <title>Ayeryoga - Next Page</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body, html {
             height: 100%;
-            font-family: 'Poppins', serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #f4f4f9;
         }
 
@@ -32,16 +32,12 @@
             padding: 20px;
         }
 
-        .limegreen {
-            background: linear-gradient(135deg, #a8e063, #56ab2f);
+        .blue {
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
         }
 
-        .green {
-            background: linear-gradient(135deg, #43cea2, #185a9d);
-        }
-
-        .darkgreen {
-            background: linear-gradient(135deg, #1d976c, #93f9b9);
+        .darkblue {
+            background: linear-gradient(135deg, #003a6b, #003b6f);
         }
 
         h1 {
@@ -49,25 +45,6 @@
             font-size: 2.5rem;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             letter-spacing: 1px;
-        }
-
-        .scroll-down {
-            position: fixed;
-            bottom: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 1rem;
-            color: white;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .scroll-down:hover {
-            background: rgba(0, 0, 0, 0.8);
-            transform: translateX(-50%) scale(1.1);
         }
 
         .back-button {
@@ -88,26 +65,67 @@
             transform: scale(1.1);
         }
 
-        .footer-text {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Serif', serif;
-            font-size: 1rem;
-            color: black;
-            text-align: center;
-        }
-
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
 
-            .scroll-down, .back-button {
+            .back-button {
                 font-size: 0.9rem;
             }
         }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Section 1: Blue with Gradient -->
+        <div class="section blue">
+            <h1>Explore More About Ayeryoga and buy our courses made by professionals in India for just 5.00 euros and all the money will be deposited to charity.</h1>
+        </div>
+
+        <!-- Section 2: Dark Blue with Gradient -->
+        <div class="section darkblue">
+            <h1></h1>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button" onclick="window.history.back();">
+        Go Back
+    </div>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayeryoga - Modern Design</title>
+    <style>
+        /* Existing styles... */
+
+        /* Additional styles for back button */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 1rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+
+        /* Other styles... */
     </style>
 </head>
 <body>
@@ -139,11 +157,6 @@
         Go Back
     </div>
 
-    <!-- Footer Text -->
-    <div class="footer-text">
-        Your footer text here.
-    </div>
-
     <script>
         document.addEventListener('dblclick', function (event) {
             if (event.button === 2) { // Right mouse button
@@ -159,3 +172,5 @@
 
 </body>
 </html>
+
+
