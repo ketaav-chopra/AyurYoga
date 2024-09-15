@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayeryoga - Next Page</title>
+    <title>Ayeryoga - Modern Design</title>
     <style>
         * {
             margin: 0;
@@ -17,12 +17,14 @@
             background-color: #f4f4f9;
         }
 
+        /* Flexbox container for sections */
         .container {
             display: flex;
             flex-direction: column;
             height: 100vh;
         }
 
+        /* Section styling with gradients and modern design */
         .section {
             flex: 1;
             display: flex;
@@ -30,27 +32,52 @@
             align-items: center;
             text-align: center;
             padding: 20px;
+            transition: background 0.6s ease-in-out;
         }
 
-        .blue {
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
+        .limegreen {
+            background: linear-gradient(135deg, #a8e063, #56ab2f);
         }
 
-        .darkblue {
-            background: linear-gradient(135deg, #003a6b, #003b6f);
+        .green {
+            background: linear-gradient(135deg, #43cea2, #185a9d);
         }
 
+        .darkgreen {
+            background: linear-gradient(135deg, #1d976c, #93f9b9);
+        }
+
+        /* Heading styling */
         h1 {
             color: white;
             font-size: 2.5rem;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             letter-spacing: 1px;
+            animation: fadeIn 2s ease-in;
         }
 
-        .back-button {
+        /* Cool hover effect on text */
+        h1:hover {
+            color: #f4f4f9;
+            transition: color 0.4s ease;
+        }
+
+        /* Fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Button to encourage interaction */
+        .scroll-down {
             position: fixed;
-            top: 20px;
-            left: 20px;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             font-size: 1rem;
             color: white;
             background: rgba(0, 0, 0, 0.5);
@@ -60,72 +87,37 @@
             transition: background 0.3s ease, transform 0.3s ease;
         }
 
-        .back-button:hover {
+        .scroll-down:hover {
             background: rgba(0, 0, 0, 0.8);
-            transform: scale(1.1);
+            transform: translateX(-50%) scale(1.1);
         }
 
+        /* Subtle scaling animation when switching sections */
+        .section {
+            animation: slideIn 1s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive text for smaller screens */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
 
-            .back-button {
+            .scroll-down {
                 font-size: 0.9rem;
             }
         }
-    </style>
-</head>
-<body>
-
-    <div class="container">
-        <!-- Section 1: Blue with Gradient -->
-        <div class="section blue">
-            <h1>Explore More About Ayeryoga and buy our courses made by professionals in India for just 5.00 euros and all the money will be deposited to charity.</h1>
-        </div>
-
-        <!-- Section 2: Dark Blue with Gradient -->
-        <div class="section darkblue">
-            <h1></h1>
-        </div>
-    </div>
-
-    <!-- Back Button -->
-    <div class="back-button" onclick="window.history.back();">
-        Go Back
-    </div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayeryoga - Modern Design</title>
-    <style>
-        /* Existing styles... */
-
-        /* Additional styles for back button */
-        .back-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            font-size: 1rem;
-            color: white;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .back-button:hover {
-            background: rgba(0, 0, 0, 0.8);
-            transform: scale(1.1);
-        }
-
-        /* Other styles... */
     </style>
 </head>
 <body>
@@ -152,25 +144,11 @@
         Double Click to Go to the Next Page
     </div>
 
-    <!-- Back Button -->
-    <div class="back-button" onclick="window.history.back();">
-        Go Back
-    </div>
-
     <script>
-        document.addEventListener('dblclick', function (event) {
-            if (event.button === 2) { // Right mouse button
-                window.location.href = "nextpage.html";
-            }
-        });
-
-        // Prevent the context menu from appearing
-        document.addEventListener('contextmenu', function (event) {
-            event.preventDefault();
+        document.addEventListener('dblclick', function () {
+            window.location.href = "nextpage.html";
         });
     </script>
 
 </body>
 </html>
-
-
