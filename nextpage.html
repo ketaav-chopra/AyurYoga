@@ -13,7 +13,7 @@
 
         body, html {
             height: 100%;
-            font-family: 'Poppins', serif;
+            font-family: 'Poppins', sans-serif;
             background-color: #f4f4f9;
         }
 
@@ -65,17 +65,6 @@
             transform: scale(1.1);
         }
 
-        .footer-text {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-family: 'Serif', serif;
-            font-size: 1rem;
-            color: black;
-            text-align: center;
-        }
-
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
@@ -106,10 +95,82 @@
         Go Back
     </div>
 
-    <!-- Footer Text -->
-    <div class="footer-text">
-        Your footer text here.
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayeryoga - Modern Design</title>
+    <style>
+        /* Existing styles... */
+
+        /* Additional styles for back button */
+        .back-button {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 1rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+
+        /* Other styles... */
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Section 1: Lime Green with Gradient -->
+        <div class="section limegreen">
+            <h1>Welcome to Ayeryoga</h1>
+        </div>
+
+        <!-- Section 2: Green with Gradient -->
+        <div class="section green">
+            <h1>Feel the Transformation Within You</h1>
+        </div>
+
+        <!-- Section 3: Dark Green with Gradient -->
+        <div class="section darkgreen">
+            <h1>Fix Bodily Pains Effortlessly</h1>
+        </div>
     </div>
+
+    <!-- Scroll Down Button -->
+    <div class="scroll-down">
+        Double Click to Go to the Next Page
+    </div>
+
+    <!-- Back Button -->
+    <div class="back-button" onclick="window.history.back();">
+        Go Back
+    </div>
+
+    <script>
+        document.addEventListener('dblclick', function (event) {
+            if (event.button === 2) { // Right mouse button
+                window.location.href = "nextpage.html";
+            }
+        });
+
+        // Prevent the context menu from appearing
+        document.addEventListener('contextmenu', function (event) {
+            event.preventDefault();
+        });
+    </script>
 
 </body>
 </html>
+
+
