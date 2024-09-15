@@ -11,11 +11,13 @@
             box-sizing: border-box;
         }
 
+
         body, html {
             height: 100%;
             font-family: 'Poppins', sans-serif;
             background-color: #f4f4f9;
         }
+
 
         /* Flexbox container for sections */
         .container {
@@ -23,6 +25,7 @@
             flex-direction: column;
             height: 100vh;
         }
+
 
         /* Section styling with gradients and modern design */
         .section {
@@ -35,17 +38,21 @@
             transition: background 0.6s ease-in-out;
         }
 
+
         .limegreen {
             background: linear-gradient(135deg, #a8e063, #56ab2f);
         }
+
 
         .green {
             background: linear-gradient(135deg, #43cea2, #185a9d);
         }
 
+
         .darkgreen {
             background: linear-gradient(135deg, #1d976c, #93f9b9);
         }
+
 
         /* Heading styling */
         h1 {
@@ -56,11 +63,13 @@
             animation: fadeIn 2s ease-in;
         }
 
+
         /* Cool hover effect on text */
         h1:hover {
             color: #f4f4f9;
             transition: color 0.4s ease;
         }
+
 
         /* Fade-in animation */
         @keyframes fadeIn {
@@ -71,6 +80,7 @@
                 opacity: 1;
             }
         }
+
 
         /* Button to encourage interaction */
         .scroll-down {
@@ -87,15 +97,18 @@
             transition: background 0.3s ease, transform 0.3s ease;
         }
 
+
         .scroll-down:hover {
             background: rgba(0, 0, 0, 0.8);
             transform: translateX(-50%) scale(1.1);
         }
 
+
         /* Subtle scaling animation when switching sections */
         .section {
             animation: slideIn 1s ease;
         }
+
 
         @keyframes slideIn {
             from {
@@ -108,11 +121,13 @@
             }
         }
 
+
         /* Responsive text for smaller screens */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
+
 
             .scroll-down {
                 font-size: 0.9rem;
@@ -122,27 +137,32 @@
 </head>
 <body>
 
+
     <div class="container">
         <!-- Section 1: Lime Green with Gradient -->
         <div class="section limegreen">
-            <h1>Welcome to Ayeryoga</h1>
+            <h1>Welcome to Ayeryoga,made by Ketaav Chopra,our CEO</h1>
         </div>
+
 
         <!-- Section 2: Green with Gradient -->
         <div class="section green">
             <h1>Feel the Transformation Within You</h1>
         </div>
 
+
         <!-- Section 3: Dark Green with Gradient -->
         <div class="section darkgreen">
-            <h1>Fix Bodily Pains Effortlessly</h1>
+            <h1>This website will relief you from facing daily life struggles like headaches,stomach aches and many more.</h1>
         </div>
     </div>
+
 
     <!-- Scroll Down Button -->
     <div class="scroll-down">
         Double Click to Go to the Next Page
     </div>
+
 
     <script>
         document.addEventListener('dblclick', function () {
@@ -150,5 +170,9 @@
         });
     </script>
 
+
 </body>
 </html>
+
+
+ 
