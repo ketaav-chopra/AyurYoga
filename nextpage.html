@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayeryoga - Next Page</title>
+    <title>Ayeryoga - Modern Design</title>
     <style>
         * {
             margin: 0;
@@ -32,12 +32,16 @@
             padding: 20px;
         }
 
-        .blue {
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
+        .limegreen {
+            background: linear-gradient(135deg, #a8e063, #56ab2f);
         }
 
-        .darkblue {
-            background: linear-gradient(135deg, #003a6b, #003b6f);
+        .green {
+            background: linear-gradient(135deg, #43cea2, #185a9d);
+        }
+
+        .darkgreen {
+            background: linear-gradient(135deg, #1d976c, #93f9b9);
         }
 
         h1 {
@@ -47,6 +51,26 @@
             letter-spacing: 1px;
         }
 
+        .scroll-down {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 1rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .scroll-down:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: scale(1.1);
+        }
+
+        /* Back Button */
         .back-button {
             position: fixed;
             top: 20px;
@@ -65,12 +89,13 @@
             transform: scale(1.1);
         }
 
+        /* Responsive text for smaller screens */
         @media (max-width: 768px) {
             h1 {
                 font-size: 2rem;
             }
 
-            .back-button {
+            .scroll-down, .back-button {
                 font-size: 0.9rem;
             }
         }
@@ -79,61 +104,9 @@
 <body>
 
     <div class="container">
-        <!-- Section 1: Blue with Gradient -->
-        <div class="section blue">
-            <h1>Explore More About Ayeryoga and buy our courses made by professionals in India for just 5.00 euros and all the money will be deposited to charity.</h1>
-        </div>
-
-        <!-- Section 2: Dark Blue with Gradient -->
-        <div class="section darkblue">
-            <h1></h1>
-        </div>
-    </div>
-
-    <!-- Back Button -->
-    <div class="back-button" onclick="window.history.back();">
-        Go Back
-    </div>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayeryoga - Modern Design</title>
-    <style>
-        /* Existing styles... */
-
-        /* Additional styles for back button */
-        .back-button {
-            position: fixed;
-            top: 20px;
-            left: 20px;
-            font-size: 1rem;
-            color: white;
-            background: rgba(0, 0, 0, 0.5);
-            padding: 10px 20px;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
-        }
-
-        .back-button:hover {
-            background: rgba(0, 0, 0, 0.8);
-            transform: scale(1.1);
-        }
-
-        /* Other styles... */
-    </style>
-</head>
-<body>
-
-    <div class="container">
         <!-- Section 1: Lime Green with Gradient -->
         <div class="section limegreen">
-            <h1>Welcome to Ayeryoga</h1>
+            <h1>Welcome to Ayeryoga, made by Ketaav Chopra, our CEO</h1>
         </div>
 
         <!-- Section 2: Green with Gradient -->
@@ -143,12 +116,12 @@
 
         <!-- Section 3: Dark Green with Gradient -->
         <div class="section darkgreen">
-            <h1>Fix Bodily Pains Effortlessly</h1>
+            <h1>This website will relieve you from daily life struggles like headaches, stomach aches, and many more.</h1>
         </div>
     </div>
 
     <!-- Scroll Down Button -->
-    <div class="scroll-down">
+    <div class="scroll-down" ondblclick="window.location.href='nextpage.html';">
         Double Click to Go to the Next Page
     </div>
 
@@ -158,20 +131,11 @@
     </div>
 
     <script>
-        document.addEventListener('dblclick', function (event) {
-            if (event.button === 2) { // Right mouse button
-                window.location.href = "nextpage.html";
-            }
-        });
-
-        // Prevent the context menu from appearing
-        document.addEventListener('contextmenu', function (event) {
-            event.preventDefault();
+        // You can optionally use this script if you prefer detecting double click via JavaScript
+        document.querySelector('.scroll-down').addEventListener('dblclick', function () {
+            window.location.href = "nextpage.html";
         });
     </script>
 
 </body>
 </html>
-
-
-
