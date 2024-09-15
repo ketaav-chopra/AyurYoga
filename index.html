@@ -77,4 +77,78 @@
             position: fixed;
             bottom: 20px;
             left: 50%;
-            transform:
+            transform: translateX(-50%);
+            font-size: 1rem;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .scroll-down:hover {
+            background: rgba(0, 0, 0, 0.8);
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        /* Subtle scaling animation when switching sections */
+        .section {
+            animation: slideIn 1s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive text for smaller screens */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .scroll-down {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Section 1: Lime Green with Gradient -->
+        <div class="section limegreen">
+            <h1>Welcome to Ayeryoga</h1>
+        </div>
+
+        <!-- Section 2: Green with Gradient -->
+        <div class="section green">
+            <h1>Feel the Transformation Within You</h1>
+        </div>
+
+        <!-- Section 3: Dark Green with Gradient -->
+        <div class="section darkgreen">
+            <h1>Fix Bodily Pains Effortlessly</h1>
+        </div>
+    </div>
+
+    <!-- Scroll Down Button -->
+    <div class="scroll-down">
+        Double Click to Go to the Next Page
+    </div>
+
+    <script>
+        document.addEventListener('dblclick', function () {
+            window.location.href = "nextpage.html";
+        });
+    </script>
+
+</body>
+</html>
