@@ -117,3 +117,44 @@
 </body>
 </html>
 
+<body>
+    <div class="intro-box">
+        <p class="intro-text">Welcome to Ayeryoga - Your journey to wellness starts here.</p>
+    </div>
+    <div class="section multi-color-bg">
+        <h1 class="abstract-font">Welcome to Ayeryoga</h1>
+        <div class="image-container">
+            <img src="download (1).jpg" alt="download (1).jpg"> 
+        </div>
+        <div class="scroll-down-btn" onclick="scrollToNextSection()">Scroll Down</div>
+    </div>
+    <div class="section second-section">
+        <h1 class="abstract-font">Discover Your Inner Peace</h1>
+        <p style="color:white; font-size: 1.5rem;">Explore our services to help you relax and rejuvenate.</p>
+    </div>
+
+    <script>
+        function scrollToNextSection() {
+            window.scroll({
+                top: window.innerHeight,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+</body>
+.intro-box {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.intro-text {
+    font-family: 'Courier New', Courier, monospace; /* Unique font */
+    font-size: 12px; /* Text size */
+    color: #333; /* Text color */
+}
