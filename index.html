@@ -98,8 +98,13 @@
             color: #333; /* Text color */
         }
 
+        /* Updated PayPal Button Styles */
         .paypal-button-container {
-            margin: 40px 0;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            transform: scale(1.5); /* Make the button bigger */
         }
 
         @media (max-width: 768px) {
@@ -113,6 +118,12 @@
 
             .image-container img {
                 width: 80%;
+            }
+
+            .paypal-button-container {
+                transform: scale(1.2); /* Slightly smaller for smaller screens */
+                right: 10px;
+                bottom: 10px;
             }
         }
     </style>
