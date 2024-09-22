@@ -77,78 +77,57 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
-        .second-section {
-            background: linear-gradient(135deg, #5A3F37, #2C7744);
+        .circle-image-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            width: 80%;
         }
 
-        .intro-box {
-            position: absolute;
-            top: 20px;
-            left: 20px;
+        .circle-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid #ddd;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .source-box {
+            margin: 20px;
+            padding: 20px;
             background: rgba(255, 255, 255, 0.8);
-            border: 2px solid #333;
             border-radius: 10px;
+            width: 60%;
+            text-align: center;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        .more-info-btn {
             padding: 10px 20px;
-            z-index: 1000;
+            font-size: 1.2rem;
+            color: white;
+            background: #333;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+            text-decoration: none;
         }
 
-        .intro-text {
-            font-family: 'Courier New', Courier, monospace; /* Unique font */
-            font-size: 12px; /* Text size */
-            color: #333; /* Text color */
-        }
-
-        /* Updated PayPal Button Styles */
-        .paypal-button-container {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            transform: scale(1.5); /* Make the button bigger */
-        }
-
-        @media (max-width: 768px) {
-            .abstract-font {
-                font-size: 2rem;
-            }
-
-            .scroll-down-btn {
-                font-size: 1rem;
-            }
-
-            .image-container img {
-                width: 80%;
-            }
-
-            .paypal-button-container {
-                transform: scale(1.2); /* Slightly smaller for smaller screens */
-                right: 10px;
-                bottom: 10px;
-            }
+        .more-info-btn:hover {
+            background: #555;
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-    <div class="intro-box">
-        <p class="intro-text">This website was created by Ketaav Chopra, a 16-year-old who developed this project as a personal initiative. Inspired by his mother's struggle with arthritis and the lack of affordable resources combining Ayurveda and yoga for pain relief, Ketaav sought to provide accessible solutions. Many websites offering similar services are costly, often charging 10-20 euros, and primarily focus on selling products. In contrast, this platform offers affordable courses, with prices capped at 5.00 euros. All proceeds are donated to charity, making this a nonprofit venture dedicated to helping others.
-        </p>
-    </div>
-    
-    <!-- PayPal Button -->
-    <div class="paypal-button-container">
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_bottom">
-            <input type="hidden" name="cmd" value="_xclick">
-            <input type="hidden" name="business" value="YOUR_PAYPAL_EMAIL">
-            <input type="hidden" name="item_name" value="Yoga and Ayurveda Course">
-            <input type="hidden" name="amount" value="5.00">
-            <input type="hidden" name="currency_code" value="EUR">
-            <input type="hidden" name="return" value="https://yourwebsite.com/YOUR_RETURN_URL">
-            <input type="hidden" name="cancel_return" value="https://yourwebsite.com/cancel.html">
-            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynow_LG.gif" border="0" name="submit" alt="Buy Now with PayPal">
-            <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-        </form>
-    </div>
-
+    <!-- Existing sections -->
     <div class="section multi-color-bg">
         <h1 class="abstract-font">Welcome to Ayeryoga</h1>
         <div class="image-container">
@@ -156,9 +135,32 @@
         </div>
         <div class="scroll-down-btn" onclick="scrollToNextSection()">Scroll Down</div>
     </div>
+    
     <div class="section second-section">
         <h1 class="abstract-font">Discover Your Inner Peace</h1>
         <p style="color:white; font-size: 1.5rem;">Explore our services to help you relax and rejuvenate.</p>
+    </div>
+
+    <!-- New Page with Circle Images -->
+    <div class="section multi-color-bg" id="new-page">
+        <h1 class="abstract-font">Our Sources</h1>
+        <div class="circle-image-container">
+            <div class="circle-image">Source 1</div>
+            <div class="circle-image">Source 2</div>
+        </div>
+        <div class="source-box">
+            <p>All information provided by certified professionals in India who specialize in Ayurveda and Yoga. We ensure that all practices are safe and effective.</p>
+        </div>
+        <a href="sources.html" class="more-info-btn" target="_blank">More Information</a>
+    </div>
+
+    <!-- New Page for More Information -->
+    <div style="display:none;">
+        <div id="sources">
+            <h1>Contact Information of Sources</h1>
+            <p>Source 1: Dr. Ayurveda - ayurvedaexpert@example.com, +91-1234567890</p>
+            <p>Source 2: Yoga Guru - yogaguru@example.com, +91-0987654321</p>
+        </div>
     </div>
 
     <script>
