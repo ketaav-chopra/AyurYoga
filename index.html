@@ -109,20 +109,10 @@
             font-size: 1rem;
         }
 
-        .more-info-btn {
-            padding: 10px 20px;
-            font-size: 1.2rem;
-            color: white;
-            background: #333;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background 0.3s ease, transform 0.3s ease;
-            text-decoration: none;
-        }
-
-        .more-info-btn:hover {
-            background: #555;
-            transform: scale(1.1);
+        .middle-section {
+            background: linear-gradient(135deg, #3A1C71, #D76D77, #FFAF7B);
+            background-size: 300% 300%;
+            animation: gradientAnimation 10s ease infinite;
         }
     </style>
 </head>
@@ -136,7 +126,8 @@
         <div class="scroll-down-btn" onclick="scrollToNextSection()">Scroll Down</div>
     </div>
     
-    <div class="section second-section">
+    <!-- Updated middle section with color -->
+    <div class="section middle-section">
         <h1 class="abstract-font">Discover Your Inner Peace</h1>
         <p style="color:white; font-size: 1.5rem;">Explore our services to help you relax and rejuvenate.</p>
     </div>
@@ -151,16 +142,6 @@
         <div class="source-box">
             <p>All information provided by certified professionals in India who specialize in Ayurveda and Yoga. We ensure that all practices are safe and effective.</p>
         </div>
-        <a href="sources.html" class="more-info-btn" target="_blank">More Information</a>
-    </div>
-
-    <!-- New Page for More Information -->
-    <div style="display:none;">
-        <div id="sources">
-            <h1>Contact Information of Sources</h1>
-            <p>Source 1: Dr. Ayurveda - ayurvedaexpert@example.com, +91-1234567890</p>
-            <p>Source 2: Yoga Guru - yogaguru@example.com, +91-0987654321</p>
-        </div>
     </div>
 
     <script>
@@ -173,3 +154,4 @@
     </script>
 </body>
 </html>
+
