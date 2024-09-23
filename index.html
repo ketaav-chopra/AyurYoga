@@ -114,6 +114,62 @@
             background-size: 300% 300%;
             animation: gradientAnimation 10s ease infinite;
         }
+
+        .paypal-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(135deg, #F76B1C, #FFAFBD, #A8E063);
+            height: 100vh;
+            color: #333;
+        }
+
+        .buy-now-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            color: white;
+            background: #ff6b6b;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+
+        .buy-now-btn:hover {
+            background: #d64545;
+            transform: scale(1.1);
+        }
+
+        .image-gallery {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            width: 80%;
+        }
+
+        .gallery-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid #ddd;
+        }
+
+        .courses-container {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            width: 80%;
+            text-align: center;
+            color: #333;
+        }
     </style>
 </head>
 <body>
@@ -121,7 +177,7 @@
     <div class="section multi-color-bg">
         <h1 class="abstract-font">Welcome to Ayeryoga</h1>
         <div class="image-container">
-            <img src="image_2024-09-16_191744105.png" alt="image_2024-09-16_191744105.png"> 
+            <img src="image_2024-09-16_191744105.png" alt="Yoga Image"> 
         </div>
         <div class="scroll-down-btn" onclick="scrollToNextSection()">Scroll Down</div>
     </div>
@@ -132,15 +188,25 @@
         <p style="color:white; font-size: 1.5rem;">Explore our services to help you relax and rejuvenate.</p>
     </div>
 
-    <!-- New Page with Circle Images -->
-    <div class="section multi-color-bg" id="new-page">
-        <h1 class="abstract-font">Our Sources</h1>
-        <div class="circle-image-container">
-            <div class="circle-image">Source 1</div>
-            <div class="circle-image">Source 2</div>
+    <!-- New page with PayPal button and gallery -->
+    <div class="section paypal-section" id="paypal-page">
+        <h1 class="abstract-font">Get Access to All Our Courses</h1>
+        <div class="image-gallery">
+            <div class="gallery-image">Image 1</div>
+            <div class="gallery-image">Image 2</div>
+            <div class="gallery-image">Image 3</div>
         </div>
-        <div class="source-box">
-            <p>All information provided by certified professionals in India who specialize in Ayurveda and Yoga. We ensure that all practices are safe and effective.</p>
+        <button class="buy-now-btn" onclick="showCourses()">Buy Now with PayPal</button>
+    </div>
+
+    <!-- Courses section -->
+    <div class="section multi-color-bg" id="courses-section" style="display: none;">
+        <h1 class="abstract-font">Available Courses</h1>
+        <div class="courses-container">
+            <p>Course 1 - Ayurveda Basics</p>
+            <p>Course 2 - Yoga for Beginners</p>
+            <p>Course 3 - Pain Relief Techniques</p>
+            <!-- You can add more courses here -->
         </div>
     </div>
 
@@ -151,7 +217,14 @@
                 behavior: 'smooth'
             });
         }
+
+        function showCourses() {
+            document.getElementById('courses-section').style.display = 'block';
+            window.scroll({
+                top: document.getElementById('courses-section').offsetTop,
+                behavior: 'smooth'
+            });
+        }
     </script>
 </body>
 </html>
-
