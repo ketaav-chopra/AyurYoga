@@ -25,7 +25,8 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            height: 100vh;
+            min-height: 100vh; /* Ensures each section takes at least full viewport height */
+            padding: 20px;
             color: white;
             transition: background 0.6s ease-in-out;
         }
@@ -36,8 +37,8 @@
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             letter-spacing: 1.5px;
             margin-bottom: 20px;
-            animation: fadeIn 2s ease-in-out forwards;
             opacity: 0;
+            animation: fadeIn 2s ease-in-out forwards;
         }
 
         .multi-color-bg {
@@ -66,7 +67,7 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
             margin: 20px 0;
             opacity: 0;
-            animation: fadeIn 2s ease-in-out 3s forwards;
+            animation: fadeIn 2s ease-in-out 1s forwards; /* Adjusted animation timing */
         }
 
         .scroll-down-btn {
@@ -83,10 +84,37 @@
             transition: background 0.3s ease, transform 0.3s ease;
             animation: bounce 2s infinite;
         }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .source-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+        
+        /* Bounce animation */
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-15px);
+            }
+            60% {
+                transform: translateY(-7px);
+            }
+        }
     </style>
 </head>
 <body>
-    <!-- Existing sections remain the same -->
+    <!-- Welcome Section -->
     <div class="section multi-color-bg">
         <h1 class="abstract-font">Welcome to Ayeryoga</h1>
         <div class="image-container">
@@ -95,7 +123,7 @@
         <div class="scroll-down-btn" onclick="scrollToNextSection()">Scroll Down</div>
     </div>
 
-    <!-- Middle section with color remains unchanged -->
+    <!-- Why Use This Website Section -->
     <div class="section multi-color-bg">
         <h1 class="abstract-font">Discover Your Inner Peace</h1>
         <p class="animated-text">Why should you use this website?</p>
@@ -107,13 +135,13 @@
         </div>
     </div>
 
-    <!-- Integration of Canva design -->
+    <!-- Canva Design Integration Section -->
     <div class="section" style="background-color: #fff; color: #333;">
         <h1 class="abstract-font" style="color: #444;">Explore Our Canva Design</h1>
         <iframe class="canva-embed" src="https://www.canva.com/design/DAGRx-oTENU/g1Maggn0jfd69xo19aa2EA/view?embed" allowfullscreen></iframe>
     </div>
 
-    <!-- Remaining existing sections -->
+    <!-- Gallery and Courses Section -->
     <div class="section multi-color-bg" id="gallery-page">
         <h1 class="abstract-font">Gallery and Courses</h1>
         <div class="square-image-container">
@@ -126,6 +154,7 @@
         </div>
     </div>
 
+    <!-- Sources Section -->
     <div class="section multi-color-bg" id="new-page">
         <h1 class="abstract-font">Our Sources</h1>
         <div class="circle-image-container">
@@ -144,3 +173,4 @@
     </script>
 </body>
 </html>
+
