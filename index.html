@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayeryoga - Modern Abstract Design</title>
     <style>
+        /* Existing styles */
         * {
             margin: 0;
             padding: 0;
@@ -45,6 +46,7 @@
             animation: gradientAnimation 10s ease infinite, fadeIn 2s ease-in-out;
         }
 
+        /* Animation and transition keyframes */
         @keyframes gradientAnimation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -56,10 +58,15 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-20px); }
-            60% { transform: translateY(-10px); }
+        .canva-embed {
+            width: 80%;
+            height: 60vh;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 3s forwards;
         }
 
         .scroll-down-btn {
@@ -76,113 +83,10 @@
             transition: background 0.3s ease, transform 0.3s ease;
             animation: bounce 2s infinite;
         }
-
-        .scroll-down-btn:hover {
-            background: rgba(0, 0, 0, 0.8);
-            transform: scale(1.1);
-        }
-
-        .image-container {
-            margin: 20px 0;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out 1s forwards;
-        }
-
-        .image-container img {
-            width: 50%;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .image-container img:hover {
-            transform: scale(1.05);
-        }
-
-        .circle-image-container {
-            display: flex;
-            justify-content: space-around;
-            margin: 40px 0;
-            width: 80%;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out 1.5s forwards;
-        }
-
-        .circle-image {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background-color: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 2px solid #ddd;
-            font-size: 16px;
-            color: #333;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .circle-image:hover {
-            transform: scale(1.1);
-            background-color: #f0f0f0;
-        }
-
-        .square-image-container {
-            display: flex;
-            justify-content: space-around;
-            margin: 40px 0;
-            width: 80%;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out 2s forwards;
-        }
-
-        .square-image {
-            width: 300px;
-            height: 200px;
-            background-color: #eee;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 2px solid #ddd;
-            font-size: 16px;
-            color: #333;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .square-image:hover {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .source-box, .course-box {
-            margin: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            width: 60%;
-            text-align: center;
-            color: #333;
-            font-size: 1rem;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out 2.5s forwards;
-        }
-
-        .animated-text {
-            margin-top: 20px;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out 2s forwards;
-            color: #fff;
-            font-size: 1.2rem;
-            padding: 10px;
-            border-radius: 5px;
-            background: rgba(0, 0, 0, 0.3);
-        }
     </style>
 </head>
 <body>
-    <!-- Existing sections -->
+    <!-- Existing sections remain the same -->
     <div class="section multi-color-bg">
         <h1 class="abstract-font">Welcome to Ayeryoga</h1>
         <div class="image-container">
@@ -190,19 +94,26 @@
         </div>
         <div class="scroll-down-btn" onclick="scrollToNextSection()">Scroll Down</div>
     </div>
-    
-    <!-- Updated middle section with color -->
+
+    <!-- Middle section with color remains unchanged -->
     <div class="section multi-color-bg">
         <h1 class="abstract-font">Discover Your Inner Peace</h1>
-        <p class="animated-text">WHy should you use this website.</p>
+        <p class="animated-text">Why should you use this website?</p>
         <div class="source-box">
-            <p>1. Evrything is free on this website!!!
-2. All of our methods are verified and are from Proffesionals who have been practicing AYurveda and yoga for a very long time!!!
-3. It can cure alot of your daily life problems without relying on medicines that only give temparary relief while yoga and ayurveda are more permanent!!!</p>
+            <p>1. Everything is free on this website!!!<br>
+               2. All of our methods are verified and are from professionals who have been practicing Ayurveda and yoga for a very long time!!!<br>
+               3. It can cure a lot of your daily life problems without relying on medicines that only give temporary relief, while yoga and Ayurveda are more permanent!!!
+            </p>
         </div>
     </div>
 
-        <!-- Final page with more details -->
+    <!-- Integration of Canva design -->
+    <div class="section" style="background-color: #fff; color: #333;">
+        <h1 class="abstract-font" style="color: #444;">Explore Our Canva Design</h1>
+        <iframe class="canva-embed" src="https://www.canva.com/design/DAGRx-oTENU/g1Maggn0jfd69xo19aa2EA/view?embed" allowfullscreen></iframe>
+    </div>
+
+    <!-- Remaining existing sections -->
     <div class="section multi-color-bg" id="gallery-page">
         <h1 class="abstract-font">Gallery and Courses</h1>
         <div class="square-image-container">
@@ -215,7 +126,6 @@
         </div>
     </div>
 
-    <!-- New Page with Circle Images -->
     <div class="section multi-color-bg" id="new-page">
         <h1 class="abstract-font">Our Sources</h1>
         <div class="circle-image-container">
@@ -226,8 +136,6 @@
             <p>All information provided by certified professionals in India who specialize in Ayurveda and Yoga. We ensure that all practices are safe and effective.</p>
         </div>
     </div>
-
-
 
     <script>
         function scrollToNextSection() {
