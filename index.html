@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayuryoga - Modern Abstract Design</title>
+    <title>Ayeryoga - Modern Abstract Design</title>
     <style>
         * {
             margin: 0;
@@ -15,6 +15,7 @@
             height: 100%;
             font-family: 'Poppins', sans-serif; 
             background-color: #f4f4f9;
+            overflow-x: hidden;
         }
 
         .section {
@@ -34,18 +35,31 @@
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             letter-spacing: 1.5px;
             margin-bottom: 20px;
+            animation: fadeIn 2s ease-in-out forwards;
+            opacity: 0;
         }
 
         .multi-color-bg {
             background: linear-gradient(135deg, #FF6B6B, #FFD93D, #1FAB89, #6225E6);
             background-size: 300% 300%;
-            animation: gradientAnimation 10s ease infinite;
+            animation: gradientAnimation 10s ease infinite, fadeIn 2s ease-in-out;
         }
 
         @keyframes gradientAnimation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
         }
 
         .scroll-down-btn {
@@ -60,6 +74,7 @@
             border-radius: 30px;
             cursor: pointer;
             transition: background 0.3s ease, transform 0.3s ease;
+            animation: bounce 2s infinite;
         }
 
         .scroll-down-btn:hover {
@@ -69,12 +84,48 @@
 
         .image-container {
             margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 1s forwards;
         }
 
         .image-container img {
             width: 50%;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .circle-image-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 0;
+            width: 80%;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 1.5s forwards;
+        }
+
+        .circle-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background-color: #eee;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid #ddd;
+            font-size: 16px;
+            color: #333;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+        .circle-image:hover {
+            transform: scale(1.1);
+            background-color: #f0f0f0;
         }
 
         .square-image-container {
@@ -82,6 +133,8 @@
             justify-content: space-around;
             margin: 40px 0;
             width: 80%;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 2s forwards;
         }
 
         .square-image {
@@ -96,56 +149,80 @@
             font-size: 16px;
             color: #333;
             border-radius: 10px;
+            transition: transform 0.3s ease;
         }
 
-        .text-box {
+        .square-image:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .source-box, .course-box {
+            margin: 20px;
             padding: 20px;
             background: rgba(255, 255, 255, 0.8);
             border-radius: 10px;
             width: 60%;
             text-align: center;
             color: #333;
-            font-size: 1.2rem;
-            margin: 20px 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            font-size: 1rem;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 2.5s forwards;
         }
 
-        .middle-section {
-            background: linear-gradient(135deg, #3A1C71, #D76D77, #FFAF7B);
-            background-size: 300% 300%;
-            animation: gradientAnimation 10s ease infinite;
+        .animated-text {
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 2s forwards;
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 10px;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.3);
         }
     </style>
 </head>
 <body>
-    <!-- First section -->
+    <!-- Existing sections -->
     <div class="section multi-color-bg">
-        <h1 class="abstract-font">Welcome to Ayuryoga</h1>
+        <h1 class="abstract-font">Welcome to Ayeryoga</h1>
         <div class="image-container">
-            <img src="image_2024-09-24_185921154.png" alt="Yoga Image"> 
+            <img src="image_2024-09-16_191744105.png" alt="Ayeryoga"> 
         </div>
         <div class="scroll-down-btn" onclick="scrollToNextSection()">Scroll Down</div>
     </div>
     
-    <!-- Middle section with color and abstract text boxes -->
-    <div class="section middle-section">
+    <!-- Updated middle section with color -->
+    <div class="section multi-color-bg">
         <h1 class="abstract-font">Discover Your Inner Peace</h1>
-        <p style="color:white; font-size: 1.5rem;">Why should I use this website?</p>
-        <div class="text-box">"ALL the information in this website is FREE!!!"</div>       
-        <div class="text-box">"All the methods here are from ancient indian manuscripts and proffesionals who are still practicing it in india till date!!!"</div>
-        <div class="text-box">"It makes you less dependent on medicines that work but are not the best way to cure these issues as they only give temprary relief or just a little relief while the AYURVEDIC methods that you will learn have a long term effect and the YOGA methods are short term but easy with video demonstration !!!"</div>
+        <p class="animated-text">Explore our services to help you relax and rejuvenate.</p>
+        <div class="source-box">
+            <p>Experience the harmony of Ayurveda and Yoga, combined for ultimate well-being.</p>
+        </div>
     </div>
 
-    <!-- Gallery and Courses section with abstract text boxes -->
-    <div class="section multi-color-bg">
+    <!-- New Page with Circle Images -->
+    <div class="section multi-color-bg" id="new-page">
+        <h1 class="abstract-font">Our Sources</h1>
+        <div class="circle-image-container">
+            <div class="circle-image">Source 1</div>
+            <div class="circle-image">Source 2</div>
+        </div>
+        <div class="source-box">
+            <p>All information provided by certified professionals in India who specialize in Ayurveda and Yoga. We ensure that all practices are safe and effective.</p>
+        </div>
+    </div>
+
+    <!-- Final page with more details -->
+    <div class="section multi-color-bg" id="gallery-page">
         <h1 class="abstract-font">Gallery and Courses</h1>
         <div class="square-image-container">
-            <div class="square-image">Image 1</div>
-            <div class="square-image">Image 2</div>
-            <div class="square-image">Image 3</div>
+            <div class="square-image">Course Image 1</div>
+            <div class="square-image">Course Image 2</div>
+            <div class="square-image">Course Image 3</div>
         </div>
-        <div class="text-box">"Our gallery showcases a range of practices designed for every experience level."</div>
-        <div class="text-box">"Learn from certified professionals who bring centuries-old knowledge to your practice."</div>
+        <div class="course-box">
+            <p>We provide courses on how to cure day-to-day problems in a matter of minutes for FREE.</p>
+        </div>
     </div>
 
     <script>
