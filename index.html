@@ -58,7 +58,63 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Rotating images styles */
+        .canva-embed {
+            width: 80%;
+            height: 60vh;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 2s ease-in-out 1s forwards;
+            background: linear-gradient(135deg, #f3e7e9, #e3eeff, #e2f7e1); 
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .source-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            text-align: center;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            overflow: hidden;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .gallery-item p {
+            padding: 10px;
+            background: #f4f4f9;
+            margin: 0;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* New styles for rotating circular images */
         .rotating-image {
             width: 150px;
             height: 150px;
@@ -72,18 +128,47 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* Styles for the PDF icons */
+        .pdf-icon {
+            width: 100px;
+            height: 140px;
+            margin: 10px;
+            cursor: pointer;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+        }
+
+        .pdf-icon:hover {
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
     <!-- Existing sections remain the same -->
 
-    <!-- Sources Section -->
+    <!-- Sources Section with rotating images and PDF links -->
     <div class="section multi-color-bg" id="new-page">
         <h1 class="abstract-font">Our Sources</h1>
+        
+        <!-- Rotating Images -->
         <div class="circle-image-container">
             <img src="path-to-your-image1.jpg" alt="Source 1" class="rotating-image">
             <img src="path-to-your-image2.jpg" alt="Source 2" class="rotating-image">
         </div>
+        
+        <!-- PDF Links -->
+        <div class="pdf-container">
+            <a href="file:///C:/Users/Ketaav/Downloads/Yellow%20Black%20Modern%20Course%20YouTube%20Thumbnail.pdf" target="_blank">
+                <img src="thumbnail-of-pdf1.png" alt="PDF 1" class="pdf-icon">
+            </a>
+            <a href="file:///C:/Users/Ketaav/Downloads/Yellow%20Black%20Modern%20Course%20YouTube%20Thumbnail%20(1).pdf" target="_blank">
+                <img src="thumbnail-of-pdf2.png" alt="PDF 2" class="pdf-icon">
+            </a>
+        </div>
+        
         <div class="source-box">
             <p>All information provided by certified professionals in India who specialize in Ayurveda and Yoga. We ensure that all practices are safe and effective.</p>
         </div>
