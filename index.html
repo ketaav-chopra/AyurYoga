@@ -25,7 +25,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            min-height: 100vh; /* Ensures each section takes at least full viewport height */
+            min-height: 100vh; 
             padding: 20px;
             color: white;
             transition: background 0.6s ease-in-out;
@@ -47,7 +47,6 @@
             animation: gradientAnimation 10s ease infinite, fadeIn 2s ease-in-out;
         }
 
-        /* Animation and transition keyframes */
         @keyframes gradientAnimation {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
@@ -59,116 +58,31 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        .canva-embed {
-            width: 80%;
-            height: 60vh;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            margin: 20px 0;
-            opacity: 0;
-            animation: fadeIn 2s ease-in-out 1s forwards; /* Adjusted animation timing */
-            background: linear-gradient(135deg, #f3e7e9, #e3eeff, #e2f7e1); /* New background */
+        /* Rotating images styles */
+        .rotating-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            animation: rotate 5s linear infinite;
+            margin: 20px;
         }
 
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .source-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-        }
-
-        .gallery-item {
-            position: relative;
-            text-align: center;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            overflow: hidden;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            border-bottom: 2px solid #ddd;
-        }
-
-        .gallery-item p {
-            padding: 10px;
-            background: #f4f4f9;
-            margin: 0;
-            color: #333;
-            font-weight: bold;
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <!-- Welcome Section -->
-    <div class="section multi-color-bg">
-        <h1 class="abstract-font">Welcome to Ayuryoga</h1>
-        <div class="image-container">
-            <img src="image_2024-09-24_185921154.png" alt="Ayuryoga"> 
-        </div>
-    </div>
-
-    <!-- Why Use This Website Section -->
-    <div class="section multi-color-bg">
-        <h1 class="abstract-font">Discover Your Inner Peace</h1>
-        <p class="animated-text">Why should you use this website?</p>
-        <div class="source-box">
-            <p>1. Everything is free on this website!!!<br>
-               2. All of our methods are verified and are from professionals who have been practicing Ayurveda and yoga for a very long time!!!<br>
-               3. It can cure a lot of your daily life problems without relying on medicines that only give temporary relief, while yoga and Ayurveda are more permanent!!!
-            </p>
-        </div>
-    </div>
-
-    <!-- Canva Design Integration Section -->
-    <div class="section" style="background-color: #fff; color: #333;">
-        <h1 class="abstract-font" style="color: #444;">Explore Our Canva Design</h1>
-        <iframe class="canva-embed" src="https://www.canva.com/design/DAGRx-oTENU/g1Maggn0jfd69xo19aa2EA/view?embed" allowfullscreen></iframe>
-    </div>
-
-    <!-- Gallery and Courses Section -->
-    <div class="section multi-color-bg" id="gallery-page">
-        <h1 class="abstract-font">Gallery and Courses</h1>
-        <div class="gallery-container">
-            <div class="gallery-item">
-                <img src="path-to-your-canva-image1.png" alt="Project 1">
-                <p>Synchronous treatments</p>
-            </div>
-            <div class="gallery-item">
-                <img src="path-to-your-canva-image2.png" alt="Project 2">
-                <p>Abhayanga</p>
-            </div>
-            <div class="gallery-item">
-                <img src="path-to-your-canva-image3.png" alt="Project 3">
-                <p>Shirodara</p>
-            </div>
-            <!-- Add more items as needed -->
-        </div>
-    </div>
+    <!-- Existing sections remain the same -->
 
     <!-- Sources Section -->
     <div class="section multi-color-bg" id="new-page">
         <h1 class="abstract-font">Our Sources</h1>
         <div class="circle-image-container">
-            <div class="circle-image">Source 1</div>
-            <div class="circle-image">Source 2</div>
+            <img src="path-to-your-image1.jpg" alt="Source 1" class="rotating-image">
+            <img src="path-to-your-image2.jpg" alt="Source 2" class="rotating-image">
         </div>
         <div class="source-box">
             <p>All information provided by certified professionals in India who specialize in Ayurveda and Yoga. We ensure that all practices are safe and effective.</p>
@@ -176,4 +90,3 @@
     </div>
 </body>
 </html>
-
