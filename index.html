@@ -77,13 +77,6 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        .source-box {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 20px;
-            border-radius: 10px;
-            margin-top: 10px;
-        }
-
         .gallery-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -92,8 +85,6 @@
         }
 
         .gallery-item {
-            position: relative;
-            text-align: center;
             background: #ffffff;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -114,7 +105,6 @@
             font-weight: bold;
         }
 
-        /* New styles for rotating circular images */
         .rotating-image {
             width: 150px;
             height: 150px;
@@ -129,7 +119,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* Styles for the PDF icons */
         .pdf-icon {
             width: 100px;
             height: 140px;
@@ -147,8 +136,50 @@
     </style>
 </head>
 <body>
-    <!-- Existing content above -->
-    
+    <!-- Welcome Section -->
+    <div class="section multi-color-bg">
+        <h1 class="abstract-font">Welcome to Ayeryoga</h1>
+        <div class="image-container">
+            <img src="image_2024-09-24_185921154.png" alt="Ayeryoga"> 
+        </div>
+    </div>
+
+    <!-- Why Use This Website Section -->
+    <div class="section multi-color-bg">
+        <h1 class="abstract-font">Discover Your Inner Peace</h1>
+        <div class="source-box">
+            <p>1. Everything is free on this website!<br>
+               2. All of our methods are verified and from professionals!<br>
+               3. Ayurveda and yoga offer long-lasting relief.
+            </p>
+        </div>
+    </div>
+
+    <!-- Canva Design Integration Section -->
+    <div class="section" style="background-color: #fff; color: #333;">
+        <h1 class="abstract-font" style="color: #444;">Explore Our Canva Design</h1>
+        <iframe class="canva-embed" src="https://www.canva.com/design/DAGRx-oTENU/g1Maggn0jfd69xo19aa2EA/view?embed" allowfullscreen></iframe>
+    </div>
+
+    <!-- Gallery and Courses Section -->
+    <div class="section multi-color-bg" id="gallery-page">
+        <h1 class="abstract-font">Gallery and Courses</h1>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="path-to-your-canva-image1.png" alt="Project 1">
+                <p>Synchronous treatments</p>
+            </div>
+            <div class="gallery-item">
+                <img src="path-to-your-canva-image2.png" alt="Project 2">
+                <p>Abhayanga</p>
+            </div>
+            <div class="gallery-item">
+                <img src="path-to-your-canva-image3.png" alt="Project 3">
+                <p>Shirodara</p>
+            </div>
+        </div>
+    </div>
+
     <!-- Sources Section with rotating images and PDF links -->
     <div class="section multi-color-bg" id="new-page">
         <h1 class="abstract-font">Our Sources</h1>
@@ -161,15 +192,13 @@
         
         <!-- PDF Links -->
         <div class="pdf-links">
-            <a href="file:///C:/Users/Ketaav/Downloads/Yellow%20Black%20Modern%20Course%20YouTube%20Thumbnail%20(1).pdf" target="_blank">
+            <a href="path-to-your-pdf-file1.pdf" target="_blank">
                 <img src="path-to-your-pdf-cover1.png" alt="PDF 1 Cover" class="pdf-icon">
             </a>
-            <a href="file:///C:/Users/Ketaav/Downloads/Yellow%20Black%20Modern%20Course%20YouTube%20Thumbnail.pdf" target="_blank">
+            <a href="path-to-your-pdf-file2.pdf" target="_blank">
                 <img src="path-to-your-pdf-cover2.png" alt="PDF 2 Cover" class="pdf-icon">
             </a>
         </div>
     </div>
-
-    <!-- Existing content below -->
 </body>
 </html>
