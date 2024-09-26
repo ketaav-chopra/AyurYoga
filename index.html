@@ -85,56 +85,34 @@
             margin-top: 10px;
         }
 
-        .square-image-container {
-            display: flex;
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
-            margin: 20px 0;
+            padding: 20px;
         }
 
-        .square-image {
-            width: 150px;
-            height: 150px;
+        .gallery-item {
+            position: relative;
+            text-align: center;
             background: #ffffff;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            animation: imageBounce 2s infinite;
-            transition: transform 0.3s ease;
-            cursor: pointer;
+            overflow: hidden;
         }
 
-        .square-image:hover {
-            transform: scale(1.1);
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #ddd;
         }
 
-        @keyframes imageBounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .circle-image-container {
-            display: flex;
-            gap: 20px;
-            margin: 20px 0;
-        }
-
-        .circle-image {
-            width: 120px;
-            height: 120px;
-            background: #ffffff;
-            border-radius: 50%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            animation: rotate 4s infinite linear;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .circle-image:hover {
-            transform: rotate(360deg);
-        }
-
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        .gallery-item p {
+            padding: 10px;
+            background: #f4f4f9;
+            margin: 0;
+            color: #333;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -162,4 +140,40 @@
     <!-- Canva Design Integration Section -->
     <div class="section" style="background-color: #fff; color: #333;">
         <h1 class="abstract-font" style="color: #444;">Explore Our Canva Design</h1>
-        <
+        <iframe class="canva-embed" src="https://www.canva.com/design/DAGRx-oTENU/g1Maggn0jfd69xo19aa2EA/view?embed" allowfullscreen></iframe>
+    </div>
+
+    <!-- Gallery and Courses Section -->
+    <div class="section multi-color-bg" id="gallery-page">
+        <h1 class="abstract-font">Gallery and Courses</h1>
+        <div class="gallery-container">
+            <div class="gallery-item">
+                <img src="path-to-your-canva-image1.png" alt="Project 1">
+                <p>Synchronous treatments</p>
+            </div>
+            <div class="gallery-item">
+                <img src="path-to-your-canva-image2.png" alt="Project 2">
+                <p>Abhayanga</p>
+            </div>
+            <div class="gallery-item">
+                <img src="path-to-your-canva-image3.png" alt="Project 3">
+                <p>Shirodara</p>
+            </div>
+            <!-- Add more items as needed -->
+        </div>
+    </div>
+
+    <!-- Sources Section -->
+    <div class="section multi-color-bg" id="new-page">
+        <h1 class="abstract-font">Our Sources</h1>
+        <div class="circle-image-container">
+            <div class="circle-image">Source 1</div>
+            <div class="circle-image">Source 2</div>
+        </div>
+        <div class="source-box">
+            <p>All information provided by certified professionals in India who specialize in Ayurveda and Yoga. We ensure that all practices are safe and effective.</p>
+        </div>
+    </div>
+</body>
+</html>
+
