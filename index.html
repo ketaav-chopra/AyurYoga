@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayuryoga - Modern Abstract Design</title>
+    <title>Ayeryoga - Modern Abstract Design</title>
     <style>
         /* Existing styles */
         * {
@@ -17,7 +17,6 @@
             font-family: 'Poppins', sans-serif; 
             background-color: #f4f4f9;
             overflow-x: hidden;
-            scroll-behavior: smooth;
         }
 
         .section {
@@ -59,121 +58,58 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        /* Scroll-to-top button */
-        #scrollToTop {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #6225E6;
-            color: white;
-            padding: 10px 15px;
-            border: none;
-            border-radius: 50%;
-            cursor: pointer;
-            display: none;
-            transition: 0.3s;
-        }
-
-        #scrollToTop:hover {
-            background-color: #FFD93D;
-        }
-
-        /* Responsive Navigation */
-        .navbar {
-            position: fixed;
-            width: 100%;
-            background-color: #6225E6;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            font-size: 1.1rem;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-
-        .nav-links {
-            display: flex;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 10px;
-                background-color: #6225E6;
-                width: 200px;
-                padding: 10px;
-            }
-
-            .nav-links.show {
-                display: flex;
-            }
-        }
-
-        /* Testimonials Section */
-        .testimonial-section {
-            background-color: #f4f4f9;
-            color: #333;
-            padding: 40px 20px;
-        }
-
-        .testimonial {
-            max-width: 600px;
-            margin: 20px auto;
-            background-color: #fff;
+        .logo-image {
+            max-width: 80%;
+            height: auto;
             border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+            background: white;
             padding: 20px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-            font-style: italic;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            color: #333;
         }
 
-        /* Animated Call-to-Action Button */
-        .cta-btn {
-            padding: 15px 30px;
-            background-color: #FF6B6B;
-            color: #fff;
-            text-decoration: none;
+        .contact-form input,
+        .contact-form textarea {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            background: #1FAB89;
+            border: none;
+            color: white;
             font-weight: bold;
-            border-radius: 25px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
         }
 
-        .cta-btn:hover {
-            background-color: #FFD93D;
-            transform: scale(1.1);
+        .contact-form button:hover {
+            background: #12876e;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="hamburger" onclick="toggleMenu()">☰</div>
-        <div class="nav-links" id="nav-links">
-            <a href="#pdf-page">Our Courses</a>
-            <a href="#sources-page">Sources</a>
-            <a href="#testimonials">Testimonials</a>
+    <!-- Welcome Page -->
+    <div class="section multi-color-bg" id="welcome-page">
+        <h1 class="abstract-font">Welcome to Ayeryoga</h1>
+        <div class="logo-container">
+            <img src="path-to-your-logo-image.png" alt="Ayeryoga Logo" class="logo-image">
         </div>
-    </nav>
+    </div>
 
-    <!-- Main content -->
+    <!-- Our Courses Page -->
     <div class="section multi-color-bg" id="pdf-page">
         <h1 class="abstract-font">Our Courses</h1>
         <div class="pdf-list">
@@ -186,6 +122,7 @@
         </div>
     </div>
 
+    <!-- Sources Page -->
     <div class="section multi-color-bg" id="sources-page">
         <h1 class="abstract-font">Our Sources</h1>
         <div class="rotating-container">
@@ -201,37 +138,15 @@
         </div>
     </div>
 
-    <!-- Testimonials Section -->
-    <div class="section testimonial-section" id="testimonials">
-        <h1 class="abstract-font" style="color: #6225E6;">Testimonials</h1>
-        <div class="testimonial">"Ayuryoga has changed my life. The resources are incredibly helpful!" - User A</div>
-        <div class="testimonial">"I never knew yoga could be this effective until I tried Ayuryoga." - User B</div>
+    <!-- New Contact Us Feature Page -->
+    <div class="section multi-color-bg" id="contact-page">
+        <h1 class="abstract-font">Contact Us</h1>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="4" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
     </div>
-
-    <!-- Call-to-Action Button -->
-    <a href="#pdf-page" class="cta-btn">Explore Our Courses</a>
-
-    <!-- Scroll-to-Top Button -->
-    <button id="scrollToTop" onclick="scrollToTop()">↑</button>
-
-    <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('nav-links');
-            navLinks.classList.toggle('show');
-        }
-
-        window.addEventListener('scroll', () => {
-            const scrollToTopBtn = document.getElementById('scrollToTop');
-            if (window.scrollY > 200) {
-                scrollToTopBtn.style.display = 'block';
-            } else {
-                scrollToTopBtn.style.display = 'none';
-            }
-        });
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-    </script>
 </body>
 </html>
