@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayeryoga - Modern Abstract Design</title>
+    <title>Ayuryoga - Modern Abstract Design</title>
     <style>
         /* Existing styles */
         * {
@@ -58,59 +58,108 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-        .logo-image {
-            max-width: 80%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .contact-form {
+        /* Navigation bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
             display: flex;
-            flex-direction: column;
-            width: 60%;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-            color: #333;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
         }
 
-        .contact-form input,
-        .contact-form textarea {
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .contact-form button {
-            padding: 10px;
-            background: #1FAB89;
-            border: none;
+        .navbar a {
             color: white;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background 0.3s ease;
+            text-decoration: none;
+            padding: 8px 16px;
+            font-size: 1.2rem;
+            transition: color 0.3s;
         }
 
-        .contact-form button:hover {
-            background: #12876e;
+        .navbar a:hover {
+            color: #FFD93D;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 150px;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+        }
+
+        /* Scroll-to-Top Button */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #FFD93D;
+            color: #333;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.2s, opacity 0.2s;
+            z-index: 999;
+        }
+
+        #scrollToTopBtn:hover {
+            transform: scale(1.1);
         }
     </style>
 </head>
 <body>
-    <!-- Welcome Page -->
-    <div class="section multi-color-bg" id="welcome-page">
-        <h1 class="abstract-font">Welcome to Ayeryoga</h1>
-        <div class="logo-container">
-            <img src="path-to-your-logo-image.png" alt="Ayeryoga Logo" class="logo-image">
+
+    <!-- Navbar -->
+    <div class="navbar">
+        <h1 style="color: #FFD93D;">Ayuryoga</h1>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="nav-links" id="navLinks">
+            <a href="#welcome">Welcome</a>
+            <a href="#courses">Our Courses</a>
+            <a href="#sources">Our Sources</a>
         </div>
     </div>
 
-    <!-- Our Courses Page -->
-    <div class="section multi-color-bg" id="pdf-page">
+    <!-- Sections of the website -->
+    <div class="section multi-color-bg" id="welcome">
+        <h1 class="abstract-font">Welcome to Ayuryoga</h1>
+        <div class="image-container">
+            <img src="image_2024-09-24_185921154.png" alt="Ayuryoga" style="width: 70%; height: auto;"> 
+        </div>
+    </div>
+
+    <div class="section multi-color-bg" id="courses">
         <h1 class="abstract-font">Our Courses</h1>
         <div class="pdf-list">
             <a href="file:///C:/Users/Ketaav/Downloads/Yellow%20Black%20Modern%20Course%20YouTube%20Thumbnail.pdf" target="_blank">
@@ -122,8 +171,7 @@
         </div>
     </div>
 
-    <!-- Sources Page -->
-    <div class="section multi-color-bg" id="sources-page">
+    <div class="section multi-color-bg" id="sources">
         <h1 class="abstract-font">Our Sources</h1>
         <div class="rotating-container">
             <div class="circular-container">
@@ -138,15 +186,30 @@
         </div>
     </div>
 
-    <!-- New Contact Us Feature Page -->
-    <div class="section multi-color-bg" id="contact-page">
-        <h1 class="abstract-font">Contact Us</h1>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" rows="4" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+    <!-- Scroll-to-Top Button -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Toggle navigation menu
+        function toggleMenu() {
+            const navLinks = document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
+        }
+
+        // Scroll-to-Top Button functionality
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = () => {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
