@@ -32,40 +32,62 @@
         .contact-form-container textarea {
             width: 100%;
             padding: 10px;
-            margin-bottom: 15px;
+            margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
             font-size: 1rem;
         }
         .contact-form-container button {
-            padding: 10px 20px;
-            background-color: #6225E6;
+            background-color: #1FAB89;
+            color: white;
             border: none;
-            color: #fff;
-            font-size: 1rem;
-            cursor: pointer;
+            padding: 10px 15px;
             border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
             transition: background-color 0.3s;
+            width: 100%;
         }
         .contact-form-container button:hover {
-            background-color: #4a1ea3;
+            background-color: #FF6B6B;
+        }
+        .message {
+            margin-top: 15px;
+            font-size: 1rem;
+            color: green;
+            display: none; /* Hidden by default */
         }
     </style>
 </head>
 <body>
+
     <div class="contact-form-container">
         <h2>Contact Us</h2>
-        <form id="contact-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID">
+        <form id="contactForm">
             <input type="text" name="name" placeholder="Your Name" required>
             <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="subject" placeholder="Subject" required>
-            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
             <button type="submit">Send Message</button>
         </form>
+        <div class="message" id="successMessage">Your message has been sent successfully!</div>
     </div>
+
     <script>
-        document.getElementById("contact-form").addEventListener("submit", function(event) {
-            alert("Your message has been sent!");
+        // Form submission handling
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault(); // Prevent the default form submission
+
+            // Display success message
+            const successMessage = document.getElementById("successMessage");
+            successMessage.style.display = "block";
+
+            // Reset the form fields
+            event.target.reset();
+
+            // Hide the success message after 3 seconds
+            setTimeout(() => {
+                successMessage.style.display = "none";
+            }, 3000);
         });
     </script>
 </body>
