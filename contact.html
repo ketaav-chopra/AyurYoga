@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+                                            <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -55,7 +55,7 @@
             margin-top: 15px;
             font-size: 1rem;
             color: green;
-            display: none; /* Hidden by default */
+            display: none; 
         }
     </style>
 </head>
@@ -73,18 +73,15 @@
     </div>
 
     <script>
-        // Form submission handling
+        
         document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Display success message
+            event.preventDefault(); 
+          
             const successMessage = document.getElementById("successMessage");
             successMessage.style.display = "block";
-
-            // Reset the form fields
+            
             event.target.reset();
 
-            // Hide the success message after 3 seconds
             setTimeout(() => {
                 successMessage.style.display = "none";
             }, 3000);
