@@ -1,91 +1,53 @@
-                                            <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Ayuryoga</title>
     <style>
+        /* Basic Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #f4f4f9;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
             padding: 20px;
         }
-        .contact-form-container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            width: 100%;
+
+        h1 {
+            color: #1FAB89;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-container {
             max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
-        .contact-form-container h2 {
-            margin-bottom: 15px;
-            font-size: 1.8rem;
-            color: #333;
-        }
-        .contact-form-container input,
-        .contact-form-container textarea {
+
+        iframe {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-        .contact-form-container button {
-            background-color: #1FAB89;
-            color: white;
+            height: 600px;
             border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
-        }
-        .contact-form-container button:hover {
-            background-color: #FF6B6B;
-        }
-        .message {
-            margin-top: 15px;
-            font-size: 1rem;
-            color: green;
-            display: none; 
         }
     </style>
 </head>
 <body>
 
-    <div class="contact-form-container">
-        <h2>Contact Us</h2>
-        <form id="contactForm">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-        <div class="message" id="successMessage">Your message has been sent successfully!</div>
+    <h1>Contact Us</h1>
+    <div class="form-container">
+        <!-- Google Forms Embed Code -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfe1TeOQZC_4bZcN7OZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZZ/viewform?embedded=true" 
+        frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
     </div>
 
-    <script>
-        
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault(); 
-          
-            const successMessage = document.getElementById("successMessage");
-            successMessage.style.display = "block";
-            
-            event.target.reset();
-
-            setTimeout(() => {
-                successMessage.style.display = "none";
-            }, 3000);
-        });
-    </script>
 </body>
 </html>
