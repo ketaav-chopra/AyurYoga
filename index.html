@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayuryoga - Modern Abstract Design</title>
+    <title>Ayuryoga - Modern Abstract Design</
+title>
     <style>
         /* Existing styles */
         * {
@@ -116,12 +117,6 @@
             }
         }
 
-        /* Dark mode styles */
-        body.dark-mode {
-            background-color: #1a1a1a;
-            color: #f4f4f9;
-        }
-
         /* Scroll-to-Top Button */
         #scrollToTopBtn {
             display: none;
@@ -181,71 +176,31 @@
             100% { transform: scale(1.1); }
         }
 
-        /* Carousel Styles */
-        .carousel {
-            position: relative;
-            width: 80%;
-            max-width: 600px;
-            margin: auto;
-            overflow: hidden;
-        }
-
-        .carousel-images {
+        /* Tic-Tac-Toe Game Styles */
+        .game-container {
             display: flex;
-            transition: transform 0.5s ease;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
         }
 
-        .carousel img {
-            width: 100%;
-            height: auto;
+        #ticTacToe {
+            border-collapse: collapse;
         }
 
-        .carousel-button {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255, 255, 255, 0.8);
-            border: none;
-            padding: 10px;
+        #ticTacToe td {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #FFD93D;
+            text-align: center;
+            font-size: 2rem;
             cursor: pointer;
-            z-index: 10;
+            transition: background 0.3s;
         }
 
-        .carousel-button.left {
-            left: 10px;
-        }
-
-        .carousel-button.right {
-            right: 10px;
-        }
-
-        /* FAQ Styles */
-        .faq-container {
-            width: 80%;
-            max-width: 600px;
-            margin: auto;
-            text-align: left;
-        }
-
-        .faq {
-            margin: 10px 0;
-        }
-
-        .faq-title {
-            cursor: pointer;
-            padding: 10px;
-            background: #FFD93D;
-            border: none;
-            width: 100%;
-            text-align: left;
-        }
-
-        .faq-content {
-            display: none;
-            padding: 10px;
-            border: 1px solid #FFD93D;
-            border-top: none;
-            background: rgba(255, 255, 255, 0.9);
+        #ticTacToe td:hover {
+            background: rgba(255, 217, 61, 0.3);
         }
     </style>
 </head>
@@ -261,7 +216,6 @@
             <a href="#game">Mini-Game</a>
             <a href="#sources">Our Sources</a>
             <a href="contact.html">Contact Us</a>
-            <button id="toggleTheme" onclick="toggleTheme()">Toggle Dark/Light Mode</button>
         </div>
     </div>
 
@@ -280,89 +234,99 @@
                 <img src="Screenshot 2024-09-26 200406.png" alt="PDF 1 Cover" class="pdf-icon">
             </a>
             <a href="file:///C:/Users/Ketaav/Downloads/Yellow%20Black%20Modern%20Course%20YouTube%20Thumbnail%20(1).pdf" target="_blank">
-                <img src="Screenshot 2024-09-26 200401.png" alt="PDF 2 Cover" class="pdf-icon">
-            </a>
-            <a href="file:///C:/Users/Ketaav/Downloads/Yellow%20Black%20Modern%20Course%20YouTube%20Thumbnail%20(2).pdf" target="_blank">
-                <img src="Screenshot 2024-09-26 200355.png" alt="PDF 3 Cover" class="pdf-icon">
+                <img src="Screenshot 2024-09-26 200446.png" alt="PDF 2 Cover" class="pdf-icon">
             </a>
         </div>
     </div>
 
+    <!-- New Game Section -->
     <div class="section multi-color-bg" id="game">
-        <h1 class="abstract-font">Mini-Game</h1>
-        <p>Enjoy our mini-game!</p>
-        <button onclick="startGame()">Play Now</button>
+        <h1 class="abstract-font">Tic-Tac-Toe Game</h1>
+        <div class="game-container">
+            <table id="ticTacToe">
+                <tr>
+                    <td onclick="makeMove(this)"></td>
+                    <td onclick="makeMove(this)"></td>
+                    <td onclick="makeMove(this)"></td>
+                </tr>
+                <tr>
+                    <td onclick="makeMove(this)"></td>
+                    <td onclick="makeMove(this)"></td>
+                    <td onclick="makeMove(this)"></td>
+                </tr>
+                <tr>
+                    <td onclick="makeMove(this)"></td>
+                    <td onclick="makeMove(this)"></td>
+                    <td onclick="makeMove(this)"></td>
+                </tr>
+            </table>
+            <button onclick="resetGame()">Reset Game</button>
+        </div>
     </div>
 
     <div class="section multi-color-bg" id="sources">
         <h1 class="abstract-font">Our Sources</h1>
         <div class="rotating-container">
             <div class="circular-container">
-                <img src="source1.jpg" alt="Source 1" class="rotating-image">
+                <img src="path-to-your-circle-image1.png" alt="Source Image 1" class="rotating-image">
             </div>
             <div class="circular-container">
-                <img src="source2.jpg" alt="Source 2" class="rotating-image">
+                <img src="path-to-your-circle-image2.png" alt="Source Image 2" class="rotating-image">
             </div>
         </div>
     </div>
-
-    <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
-
     <script>
-        // Toggle Navbar
+        // JavaScript for the Tic-Tac-Toe Game
+        let currentPlayer = 'X';
+        let gameActive = true;
+
+        function makeMove(cell) {
+            if (cell.innerText === '' && gameActive) {
+                cell.innerText = currentPlayer;
+                checkWinner();
+                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            }
+        }
+
+        function checkWinner() {
+            const cells = document.querySelectorAll("#ticTacToe td");
+            const winPatterns = [
+                [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+                [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+                [0, 4, 8], [2, 4, 6]             // Diagonals
+            ];
+
+            winPatterns.forEach(pattern => {
+                const [a, b, c] = pattern;
+                if (cells[a].innerText && cells[a].innerText === cells[b].innerText && cells[a].innerText === cells[c].innerText) {
+                    gameActive = false;
+                    alert(${cells[a].innerText} wins!);
+                }
+            });
+
+            if ([...cells].every(cell => cell.innerText !== '') && gameActive) {
+                gameActive = false;
+                alert('It\'s a draw!');
+            }
+        }
+
+        function resetGame() {
+            const cells = document.querySelectorAll("#ticTacToe td");
+            cells.forEach(cell => cell.innerText = '');
+            currentPlayer = 'X';
+            gameActive = true;
+        }
+
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
         }
 
-        // Toggle Dark/Light Mode
-        function toggleTheme() {
-            document.body.classList.toggle('dark-mode');
-        }
-
-        // Scroll to Top
-        window.onscroll = function() {
-            const btn = document.getElementById("scrollToTopBtn");
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                btn.style.display = "block";
-            } else {
-                btn.style.display = "none";
-            }
-        };
-
-        function scrollToTop() {
-            document.body.scrollTop = 0; // For Safari
-            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
-        }
-
-        // Carousel Functionality
-        let currentIndex = 0;
-
-        function showImage(index) {
-            const images = document.querySelector('.carousel-images');
-            const totalImages = document.querySelectorAll('.carousel-images img').length;
-            if (index >= totalImages) currentIndex = 0;
-            if (index < 0) currentIndex = totalImages - 1;
-            images.style.transform = `translateX(${-currentIndex * 100}%)`;
-        }
-
-        document.querySelector('.carousel-button.left').addEventListener('click', () => {
-            showImage(--currentIndex);
+        // Scroll-to-Top Button
+        window.addEventListener("scroll", () => {
+            document.getElementById("scrollToTopBtn").style.display =
+                window.pageYOffset > 100 ? "block" : "none";
         });
-
-        document.querySelector('.carousel-button.right').addEventListener('click', () => {
-            showImage(++currentIndex);
-        });
-
-        // FAQ Functionality
-        const faqTitles = document.querySelectorAll('.faq-title');
-        faqTitles.forEach(title => {
-            title.addEventListener('click', () => {
-                const content = title.nextElementSibling;
-                content.style.display = content.style.display === 'block' ? 'none' : 'block';
-            });
-        });
-
     </script>
 </body>
 </html>
