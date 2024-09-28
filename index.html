@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ayuryoga - Modern Abstract Design</
-title>
+    <title>Ayuryoga - Modern Abstract Design</title>
     <style>
         /* Existing styles */
         * {
@@ -275,58 +274,61 @@ title>
             </div>
         </div>
     </div>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
+
     <script>
-        // JavaScript for the Tic-Tac-Toe Game
-        let currentPlayer = 'X';
-        let gameActive = true;
+        let isXTurn = true; // Track player's turn
+        let board = ['', '', '', '', '', '', '', '', '']; // Board state
+        const winningCombinations = [
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
+            [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
+            [0, 4, 8], [2, 4, 6] // Diagonals
+        ];
 
         function makeMove(cell) {
-            if (cell.innerText === '' && gameActive) {
-                cell.innerText = currentPlayer;
-                checkWinner();
-                currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+            const index = Array.from(cell.parentNode.children).indexOf(cell);
+            if (board[index] === '') {
+                board[index] = isXTurn ? 'X' : 'O';
+                cell.textContent = board[index];
+                if (checkWinner()) {
+                    setTimeout(() => alert(`${isXTurn ? 'X' : 'O'} wins!`), 10);
+                } else if (!board.includes('')) {
+                    setTimeout(() => alert('It\'s a draw!'), 10);
+                }
+                isXTurn = !isXTurn; // Switch turns
             }
         }
 
         function checkWinner() {
-            const cells = document.querySelectorAll("#ticTacToe td");
-            const winPatterns = [
-                [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
-                [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
-                [0, 4, 8], [2, 4, 6]             // Diagonals
-            ];
-
-            winPatterns.forEach(pattern => {
-                const [a, b, c] = pattern;
-                if (cells[a].innerText && cells[a].innerText === cells[b].innerText && cells[a].innerText === cells[c].innerText) {
-                    gameActive = false;
-                    alert(${cells[a].innerText} wins!);
-                }
+            return winningCombinations.some(combination => {
+                return combination.every(index => board[index] === (isXTurn ? 'X' : 'O'));
             });
-
-            if ([...cells].every(cell => cell.innerText !== '') && gameActive) {
-                gameActive = false;
-                alert('It\'s a draw!');
-            }
         }
 
         function resetGame() {
-            const cells = document.querySelectorAll("#ticTacToe td");
-            cells.forEach(cell => cell.innerText = '');
-            currentPlayer = 'X';
-            gameActive = true;
+            board = ['', '', '', '', '', '', '', '', ''];
+            const cells = document.querySelectorAll('#ticTacToe td');
+            cells.forEach(cell => cell.textContent = '');
+            isXTurn = true; // Reset turn
         }
 
+        // Scroll to Top
+        window.onscroll = function() {
+            document.getElementById("scrollToTopBtn").style.display = document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ? "block" : "none";
+        };
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Navigation Menu
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
         }
-
-        // Scroll-to-Top Button
-        window.addEventListener("scroll", () => {
-            document.getElementById("scrollToTopBtn").style.display =
-                window.pageYOffset > 100 ? "block" : "none";
-        });
     </script>
+
 </body>
 </html>
