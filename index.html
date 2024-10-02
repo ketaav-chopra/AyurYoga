@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ayuryoga - Modern Abstract Design</title>
     <style>
-       
         * {
             margin: 0;
             padding: 0;
@@ -58,7 +57,6 @@
             100% { opacity: 1; transform: translateY(0); }
         }
 
-     
         .navbar {
             position: fixed;
             top: 0;
@@ -196,10 +194,15 @@
             opacity: 0;
             animation: fadeIn 1s ease-in-out forwards;
         }
+
+        .timer {
+            font-size: 2rem;
+            color: #FFD93D;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-
 
     <div class="navbar">
         <h1 style="color: #FFD93D;">Ayuryoga</h1>
@@ -213,7 +216,6 @@
         </div>
     </div>
 
-
     <div class="section multi-color-bg" id="welcome">
         <h1 class="abstract-font">Welcome to Ayuryoga</h1>
         <div class="image-container">
@@ -224,10 +226,11 @@
     <div class="section multi-color-bg" id="courses">
         <h1 class="abstract-font">Our Courses</h1>
         <div class="pdf-list">
-            <a href="file:///C:/Users/Ketaav/Downloads/Yellow%20Black%20Modern%20Course%20YouTube%20Thumbnail.pdf" target="_blank">
+            <!-- Replace these links with your hosted PDF links -->
+            <a href="https://yourwebsite.com/pdf1.pdf" target="_blank">
                 <img src="Screenshot 2024-09-26 200406.png" alt="PDF 1 Cover" class="pdf-icon">
             </a>
-            <a href="file:///C:/Users/Ketaav/Downloads/Yellow%20Black%20Modern%20Course%20YouTube%20Thumbnail%20(1).pdf" target="_blank">
+            <a href="https://yourwebsite.com/pdf2.pdf" target="_blank">
                 <img src="Screenshot 2024-09-26 200446.png" alt="PDF 2 Cover" class="pdf-icon">
             </a>
         </div>
@@ -236,6 +239,7 @@
     <!-- New Yoga Challenge Section -->
     <div class="section multi-color-bg" id="game">
         <h1 class="abstract-font">Yoga Pose Challenge</h1>
+        <div class="timer" id="timer">Time Left: 10</div>
         <div class="yoga-challenge-container">
             <div class="yoga-pose" onclick="selectPose('Downward Dog')">Downward Dog</div>
             <div class="yoga-pose" onclick="selectPose('Warrior II')">Warrior II</div>
@@ -249,4 +253,56 @@
     <div class="section multi-color-bg" id="sources">
         <h1 class="abstract-font">Our Sources</h1>
         <div class="rotating-container">
-            <div class="c
+            <div class="circular-container">
+                <img src="Screenshot 2024-09-26 200406.png" alt="Source Image" style="width: 100%; height: 100%;">
+            </div>
+            <div class="circular-container">
+                <img src="Screenshot 2024-09-26 200446.png" alt="Source Image" style="width: 100%; height: 100%;">
+            </div>
+        </div>
+    </div>
+
+    <button id="scrollToTopBtn" onclick="scrollToTop()">⬆️</button>
+
+    <script>
+        // Hamburger Menu Toggle
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Scroll to Top Button Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+        window.onscroll = function () {
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = 'block';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        };
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Yoga Pose Selection and Timer
+        let timeLeft = 10;
+        const timerElement = document.getElementById('timer');
+        let timer = setInterval(updateTimer, 1000);
+
+        function updateTimer() {
+            if (timeLeft > 0) {
+                timeLeft--;
+                timerElement.innerText = `Time Left: ${timeLeft}`;
+            } else {
+                clearInterval(timer);
+                document.getElementById('completionMessage').innerText = 'Time is up!';
+            }
+        }
+
+        function selectPose(pose) {
+            clearInterval(timer);
+            document.getElementById('completionMessage').innerText = `Well done! You completed the ${pose}.`;
+        }
+    </script>
+
+</body>
+</html>
