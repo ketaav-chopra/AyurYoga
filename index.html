@@ -271,21 +271,23 @@
         }
 
     
-        <!-- New Yoga Challenge Section -->
+ <!-- New Yoga Challenge Section -->
 <div class="section multi-color-bg" id="game">
     <h1 class="abstract-font">Yoga Pose Challenge</h1>
     <div class="timer" id="timer">Time Left: 10</div>
     <div class="score" id="score">Score: 0</div>
     <div class="yoga-challenge-container">
-        <div class="yoga-pose" id="poseDisplay">Click to Start Challenge!</div>
+        <div class="yoga-pose" id="poseDisplay" onclick="selectPose()">Click to Start Challenge!</div>
         <p id="completionMessage" class="message"></p>
     </div>
 </div>
 
 <script>
-    // Initialize score and time
+    // Initialize score and time variables
     let score = 0;
     let timeLeft = 10;
+    let timer;
+
     const timerElement = document.getElementById('timer');
     const scoreElement = document.getElementById('score');
     const poseDisplay = document.getElementById('poseDisplay');
@@ -294,8 +296,8 @@
         timeLeft = 10; // Reset time
         score = 0; // Reset score
         scoreElement.innerText = `Score: ${score}`;
-        updateTimer(); // Start timer
         poseDisplay.innerText = getRandomPose(); // Display random pose
+        updateTimer(); // Start the timer
     }
 
     function getRandomPose() {
@@ -305,7 +307,8 @@
 
     function updateTimer() {
         timerElement.innerText = `Time Left: ${timeLeft}`;
-        const timer = setInterval(() => {
+        clearInterval(timer); // Clear any previous timer
+        timer = setInterval(() => {
             if (timeLeft > 0) {
                 timeLeft--;
                 timerElement.innerText = `Time Left: ${timeLeft}`;
@@ -317,16 +320,20 @@
         }, 1000);
     }
 
-    poseDisplay.addEventListener('click', () => {
+    function selectPose() {
         if (timeLeft > 0) {
-            score++;
+            score++; // Increase score
             scoreElement.innerText = `Score: ${score}`;
-            poseDisplay.innerText = getRandomPose(); // Update to a new pose
+            poseDisplay.innerText = getRandomPose(); // Update to a new random pose
+        } else {
+            poseDisplay.innerText = 'Click to Start Challenge!'; // Reset message
         }
-    });
+    }
 
-    // Start challenge when the page loads
+    // Start the challenge when the page loads
     window.onload = startChallenge;
+</script>
+
 </script>
 
 </body>
