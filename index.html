@@ -270,39 +270,64 @@
             document.getElementById('navLinks').classList.toggle('active');
         }
 
-        // Scroll to Top Button Functionality
-        const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-        window.onscroll = function () {
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                scrollToTopBtn.style.display = 'block';
-            } else {
-                scrollToTopBtn.style.display = 'none';
-            }
-        };
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    
+        <!-- New Yoga Challenge Section -->
+<div class="section multi-color-bg" id="game">
+    <h1 class="abstract-font">Yoga Pose Challenge</h1>
+    <div class="timer" id="timer">Time Left: 10</div>
+    <div class="score" id="score">Score: 0</div>
+    <div class="yoga-challenge-container">
+        <div class="yoga-pose" id="poseDisplay">Click to Start Challenge!</div>
+        <p id="completionMessage" class="message"></p>
+    </div>
+</div>
 
-        // Yoga Pose Selection and Timer
-        let timeLeft = 10;
-        const timerElement = document.getElementById('timer');
-        let timer = setInterval(updateTimer, 1000);
+<script>
+    // Initialize score and time
+    let score = 0;
+    let timeLeft = 10;
+    const timerElement = document.getElementById('timer');
+    const scoreElement = document.getElementById('score');
+    const poseDisplay = document.getElementById('poseDisplay');
 
-        function updateTimer() {
+    function startChallenge() {
+        timeLeft = 10; // Reset time
+        score = 0; // Reset score
+        scoreElement.innerText = `Score: ${score}`;
+        updateTimer(); // Start timer
+        poseDisplay.innerText = getRandomPose(); // Display random pose
+    }
+
+    function getRandomPose() {
+        const poses = ['Downward Dog', 'Warrior II', 'Tree Pose', 'Child’s Pose', 'Cobra Pose'];
+        return poses[Math.floor(Math.random() * poses.length)];
+    }
+
+    function updateTimer() {
+        timerElement.innerText = `Time Left: ${timeLeft}`;
+        const timer = setInterval(() => {
             if (timeLeft > 0) {
                 timeLeft--;
                 timerElement.innerText = `Time Left: ${timeLeft}`;
             } else {
                 clearInterval(timer);
-                document.getElementById('completionMessage').innerText = 'Time is up!';
+                poseDisplay.innerText = 'Time is up!';
+                document.getElementById('completionMessage').innerText = `Final Score: ${score}`;
             }
-        }
+        }, 1000);
+    }
 
-        function selectPose(pose) {
-            clearInterval(timer);
-            document.getElementById('completionMessage').innerText = `Well done! You completed the ${pose}.`;
+    poseDisplay.addEventListener('click', () => {
+        if (timeLeft > 0) {
+            score++;
+            scoreElement.innerText = `Score: ${score}`;
+            poseDisplay.innerText = getRandomPose(); // Update to a new pose
         }
-    </script>
+    });
+
+    // Start challenge when the page loads
+    window.onload = startChallenge;
+</script>
 
 </body>
 </html>
