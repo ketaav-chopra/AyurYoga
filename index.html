@@ -200,6 +200,32 @@
             color: #FFD93D;
             margin-top: 20px;
         }
+
+        /* Yoga Pose of the Day Styles */
+        .pose-of-the-day {
+            margin-top: 40px;
+            padding: 15px;
+            border: 2px solid #FFD93D;
+            border-radius: 5px;
+            background: rgba(255, 217, 61, 0.2);
+            font-size: 1.5rem;
+        }
+
+        /* Share Score Button Styles */
+        .share-score {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #FFD93D;
+            color: #333;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .share-score:hover {
+            background: #FFC107;
+        }
     </style>
 </head>
 <body>
@@ -240,101 +266,98 @@
     <div class="section multi-color-bg" id="game">
         <h1 class="abstract-font">Yoga Pose Challenge</h1>
         <div class="timer" id="timer">Time Left: 10</div>
+        <div class="score" id="score">Score: 0</div>
         <div class="yoga-challenge-container">
-            <div class="yoga-pose" onclick="selectPose('Downward Dog')">Downward Dog</div>
-            <div class="yoga-pose" onclick="selectPose('Warrior II')">Warrior II</div>
-            <div class="yoga-pose" onclick="selectPose('Tree Pose')">Tree Pose</div>
-            <div class="yoga-pose" onclick="selectPose('Child’s Pose')">Child’s Pose</div>
-            <div class="yoga-pose" onclick="selectPose('Cobra Pose')">Cobra Pose</div>
-            <p id="completionMessage" class="message"></p>
+            <div class="yoga-pose" id="poseDisplay">Pose Will Appear Here</div>
+            <button class="share-score" onclick="shareScore()">Share Your Score</button>
         </div>
+        <div class="message" id="completionMessage">Great job! Your score was: <span id="finalScore"></span></div>
+    </div>
+
+    <!-- Yoga Pose of the Day Section -->
+    <div class="section multi-color-bg" id="pose-of-the-day">
+        <h1 class="abstract-font">Yoga Pose of the Day</h1>
+        <div class="pose-of-the-day" id="dailyPose">Loading...</div>
     </div>
 
     <div class="section multi-color-bg" id="sources">
         <h1 class="abstract-font">Our Sources</h1>
         <div class="rotating-container">
             <div class="circular-container">
-                <img src="WIN_20241002_20_02_56_Pro.jpg" alt="Source Image" style="width: 100%; height: 100%;">
+                <img src="https://yourimageurl.com/image1.jpg" alt="Source 1" style="width: 100%; height: 100%;">
             </div>
             <div class="circular-container">
-                <img src="WIN_20241002_20_03_06_Pro.jpg" alt="Source Image" style="width: 100%; height: 100%;">
+                <img src="https://yourimageurl.com/image2.jpg" alt="Source 2" style="width: 100%; height: 100%;">
             </div>
         </div>
     </div>
 
-    
+    <button id="scrollToTopBtn" onclick="scrollToTop()">↑</button>
 
     <script>
-        // Hamburger Menu Toggle
         function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
         }
 
-    
- <!-- New Yoga Challenge Section -->
-<div class="section multi-color-bg" id="game">
-    <h1 class="abstract-font">Yoga Pose Challenge</h1>
-    <div class="timer" id="timer">Time Left: 10</div>
-    <div class="score" id="score">Score: 0</div>
-    <div class="yoga-challenge-container">
-        <div class="yoga-pose" id="poseDisplay" onclick="selectPose()">Click to Start Challenge!</div>
-        <p id="completionMessage" class="message"></p>
-    </div>
-</div>
-
-<script>
-    // Initialize score and time variables
-    let score = 0;
-    let timeLeft = 10;
-    let timer;
-
-    const timerElement = document.getElementById('timer');
-    const scoreElement = document.getElementById('score');
-    const poseDisplay = document.getElementById('poseDisplay');
-
-    function startChallenge() {
-        timeLeft = 10; // Reset time
-        score = 0; // Reset score
-        scoreElement.innerText = `Score: ${score}`;
-        poseDisplay.innerText = getRandomPose(); // Display random pose
-        updateTimer(); // Start the timer
-    }
-
-    function getRandomPose() {
-        const poses = ['Downward Dog', 'Warrior II', 'Tree Pose', 'Child’s Pose', 'Cobra Pose'];
-        return poses[Math.floor(Math.random() * poses.length)];
-    }
-
-    function updateTimer() {
-        timerElement.innerText = `Time Left: ${timeLeft}`;
-        clearInterval(timer); // Clear any previous timer
-        timer = setInterval(() => {
-            if (timeLeft > 0) {
-                timeLeft--;
-                timerElement.innerText = `Time Left: ${timeLeft}`;
+        // Scroll to top button functionality
+        window.onscroll = function() {
+            const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.style.display = "block";
             } else {
-                clearInterval(timer);
-                poseDisplay.innerText = 'Time is up!';
-                document.getElementById('completionMessage').innerText = `Final Score: ${score}`;
+                scrollToTopBtn.style.display = "none";
             }
-        }, 1000);
-    }
+        };
 
-    function selectPose() {
-        if (timeLeft > 0) {
-            score++; // Increase score
-            scoreElement.innerText = `Score: ${score}`;
-            poseDisplay.innerText = getRandomPose(); // Update to a new random pose
-        } else {
-            poseDisplay.innerText = 'Click to Start Challenge!'; // Reset message
+        function scrollToTop() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
         }
-    }
 
-    // Start the challenge when the page loads
-    window.onload = startChallenge;
-</script>
+        // Yoga Pose Challenge Logic
+        let timeLeft = 10;
+        let score = 0;
+        const poses = ['Downward Dog', 'Tree Pose', 'Warrior II', 'Child Pose', 'Cobra Pose'];
 
-</script>
+        function startGame() {
+            const timerInterval = setInterval(() => {
+                if (timeLeft <= 0) {
+                    clearInterval(timerInterval);
+                    document.getElementById('completionMessage').style.display = 'block';
+                    document.getElementById('finalScore').innerText = score;
+                } else {
+                    document.getElementById('timer').innerText = 'Time Left: ' + timeLeft;
+                    timeLeft -= 1;
+                }
+            }, 1000);
 
+            displayRandomPose();
+        }
+
+        function displayRandomPose() {
+            const randomPose = poses[Math.floor(Math.random() * poses.length)];
+            document.getElementById('poseDisplay').innerText = randomPose;
+            score += 1; // Increment score for each pose displayed
+            setTimeout(displayRandomPose, 2000); // Show new pose every 2 seconds
+        }
+
+        function shareScore() {
+            const url = 'https://twitter.com/intent/tweet?text=I%20scored%20' + score + '%20in%20the%20Yoga%20Pose%20Challenge!';
+            window.open(url, '_blank');
+        }
+
+        // Yoga Pose of the Day Logic
+        const posesOfTheDay = ['Sun Salutation', 'Lotus Pose', 'Bridge Pose', 'Seated Forward Bend', 'Happy Baby Pose'];
+
+        function displayPoseOfTheDay() {
+            const randomPose = posesOfTheDay[Math.floor(Math.random() * posesOfTheDay.length)];
+            document.getElementById('dailyPose').innerText = randomPose;
+        }
+
+        window.onload = function() {
+            displayPoseOfTheDay(); // Load the pose of the day on page load
+            startGame(); // Start the yoga challenge
+        };
+    </script>
 </body>
 </html>
