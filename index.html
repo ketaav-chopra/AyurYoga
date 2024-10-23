@@ -163,42 +163,7 @@
             100% { transform: scale(1.1); }
         }
 
-        /* Yoga Pose Challenge Styles */
-        .yoga-challenge-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .yoga-pose {
-            padding: 15px 30px;
-            border: 2px solid #FFD93D;
-            border-radius: 5px;
-            background: rgba(255, 217, 61, 0.2);
-            font-size: 1.5rem;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-        }
-
-        .yoga-pose:hover {
-            background: rgba(255, 217, 61, 0.4);
-            transform: scale(1.05);
-        }
-
-        /* Game Completion Message */
-        .message {
-            font-size: 1.5rem;
-            color: #FFD93D;
-            opacity: 0;
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-
-        .timer {
-            font-size: 2rem;
-            color: #FFD93D;
-            margin-top: 20px;
+       
         }
 
         /* Yoga Pose of the Day Styles */
@@ -284,17 +249,7 @@
         </div>
     </div>
 
-    <!-- New Yoga Challenge Section -->
-    <div class="section multi-color-bg" id="game">
-        <h1 class="abstract-font">Yoga Pose Challenge</h1>
-        <div class="timer" id="timer">Time Left: 10</div>
-        <div class="score" id="score">Score: 0</div>
-        <div class="yoga-challenge-container">
-            <div class="yoga-pose" id="poseDisplay">Pose Will Appear Here</div>
-            <button class="share-score" onclick="shareScore()">Share Your Score</button>
-        </div>
-        <div class="message" id="completionMessage">Great job! Your score was: <span id="finalScore"></span></div>
-    </div>
+
 
     <!-- Yoga Pose of the Day Section -->
     <div class="section multi-color-bg" id="pose-of-the-day">
