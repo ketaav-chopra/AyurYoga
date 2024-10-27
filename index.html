@@ -266,7 +266,6 @@
             </tr>
             <tr bgcolor="lightgrey">
                 <td> <a href="https://ketaav-chopra.github.io/Ayuryoga/assets/pdfs/file:///C:/Users/Ketaav/Downloads/WElCOME%20TO%20AYURYOGA%20(1).pdf" target="_blank">Download PDF
-
                 Neck pain or stiff neck </a> </td>
                 <td> pdf 2 </td>
                 <td> pdf 3 </td>
@@ -337,14 +336,11 @@
         function displayRandomPose() {
             const randomPose = poses[Math.floor(Math.random() * poses.length)];
             document.getElementById('poseDisplay').innerText = randomPose;
-            score += 1; // Increment score for each pose displayed
-            setTimeout(displayRandomPose, 2000); // Show new pose every 2 seconds
+            score += 1; 
+            setTimeout(displayRandomPose, 2000); 
         }
 
-        function shareScore() {
-            const url = 'https://twitter.com/intent/tweet?text=I%20scored%20' + score + '%20in%20the%20Yoga%20Pose%20Challenge!';
-            window.open(url, '_blank');
-        }
+    
 
         // Yoga Pose of the Day Logic
         const posesOfTheDay = ['Sun Salutation', 'Lotus Pose', 'Bridge Pose', 'Seated Forward Bend', 'Happy Baby Pose'];
@@ -355,8 +351,8 @@
         }
 
         window.onload = function() {
-            displayPoseOfTheDay(); // Load the pose of the day on page load
-            startGame(); // Start the yoga challenge
+            displayPoseOfTheDay();
+            startGame(); 
         };
     </script>
 </body>
