@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayuryoga - Support Us</title>
+    <!-- Add a modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f9f9;
+            text-align: center;
+        }
+        header {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 20px 0;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+        #paypal-container {
+            margin: 30px auto;
+            max-width: 300px;
+        }
+        .donate-button {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        Support Ayuryoga with PayPal
+    </header>
+
+    <!-- Content -->
+    <h2>Help us bring natural health solutions to everyone!</h2>
+    <p>Your support helps us keep Ayuryoga free and accessible to all.</p>
+
+    <!-- PayPal Donate Button -->
+    <div class="donate-button">
+        <form action="https://www.paypal.com/donate" method="post" target="_blank">
+            <input type="hidden" name="hosted_button_id" value="YOUR_PAYPAL_BUTTON_ID">
+            <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" 
+                border="0" name="submit" title="Donate with PayPal!" alt="Donate Button">
+            <img alt="" border="0" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+    </div>
+
+    <!-- PayPal Checkout Button -->
+    <div id="paypal-container">
+        <h2>Or Make a Quick Contribution</h2>
+        <!-- Include PayPal's SDK -->
+        <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+        <!-- PayPal Button Script -->
+        <div id="paypal-button-container"></div>
+        <script>
+            paypal.Buttons({
+                createOrder: function(data, actions) {
+                    return actions.order.create({
+                        purchase_units: [{
+                            amount: {
+                                value: '10.00' // Set a default contribution amount
+                            }
+                        }]
+                    });
+                },
+                onApprove: function(data, actions) {
+                    return actions.order.capture().then(function(details) {
+                        alert('Thank you, ' + details.payer.name.given_name + '! Your contribution is greatly appreciated.');
+                    });
+                }
+            }).render('#paypal-button-container');
+        </script>
+    </div>
+</body>
+</html>
