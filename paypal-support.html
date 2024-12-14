@@ -33,6 +33,9 @@
         .donate-button {
             margin-top: 20px;
         }
+        p {
+            font-size: 1.1em;
+        }
     </style>
 </head>
 <body>
@@ -42,7 +45,7 @@
     </header>
 
     <!-- Content -->
-    <h2>Help us bring natural health solutions to everyone!</h2>
+    <h2>Help Us Bring Natural Health Solutions to Everyone!</h2>
     <p>Your support helps us keep Ayuryoga free and accessible to all.</p>
 
     <!-- PayPal Donate Button -->
@@ -57,8 +60,9 @@
     <!-- PayPal Checkout Button -->
     <div id="paypal-container">
         <h2>Or Make a Quick Contribution</h2>
-        <!-- Include PayPal's SDK -->
-        <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
+        <!-- PayPal SDK Script with Your Client ID -->
+        <script src="https://www.paypal.com/sdk/js?client-id=AcDQB9frjBMZ--5SAISlYXCphK_My71MurJSqi1CY75bLb3r9DZCNBtL0A3NAGUlktfw_uqorNfMNEq1&currency=USD"></script>
+
         <!-- PayPal Button Script -->
         <div id="paypal-button-container"></div>
         <script>
@@ -67,7 +71,7 @@
                     return actions.order.create({
                         purchase_units: [{
                             amount: {
-                                value: '10.00' // Set a default contribution amount
+                                value: '10.00' // Default contribution amount
                             }
                         }]
                     });
