@@ -65,109 +65,34 @@
             font-size: 1.5rem;
         }
 
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #1FAB89;
-            padding: 10px 20px;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .navbar h1 {
-            color: #FFD93D;
-        }
-
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-            font-size: 2rem;
-            color: white;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.2rem;
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            .menu-icon {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                background: rgba(0, 0, 0, 0.8);
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                padding: 10px;
-                border-radius: 5px;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-        }
-
-        /* Table Styles */
-        table {
-            width: 80%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        th, td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: center;
-        }
-
-        th {
-            background-color: #6225E6;
-            color: white;
-        }
-
-        td {
-            background-color: #f4f4f9;
-        }
-
-        /* Rotating Circular Containers */
-        .rotating-container {
+        .breathing-circle-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            margin: 20px 0;
         }
 
-        .circular-container {
-            width: 150px;
-            height: 150px;
+        .breathing-circle {
+            width: 100px;
+            height: 100px;
+            background-color: #FFD93D;
             border-radius: 50%;
-            overflow: hidden;
-            position: relative;
-            animation: rotate 5s linear infinite;
+            animation: none;
         }
 
-        .circular-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .breathing-instruction {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #FFD93D;
         }
 
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        @keyframes breathe {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
         }
     </style>
 </head>
@@ -201,7 +126,6 @@
                 <th>3.</th>
                 <th>4.</th>
                 <th>5.</th>
-                
             </tr>
             <tr>
                 <td>
@@ -211,21 +135,27 @@
                 </td>
                 <td>
                     <a href="https://www.canva.com/design/DAGTSGJuhag/D02gpkx14r3cEEtxPBhpAg/view?utm_content=DAGTSGJuhag&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">
-                   stiff Neck & Neck Pain
+                        Stiff Neck & Neck Pain
                     </a>
                 </td>
                 <td>pdf 3</td>
                 <td>pdf 4</td>
                 <td>pdf 5</td>
-            
             </tr>
         </table>
     </div>
 
-    <!-- Yoga Pose of the Day Section -->
+    <!-- Yoga Pose of the Day Section with Breathing Timer -->
     <div class="section multi-color-bg" id="pose-of-the-day">
         <h1 class="abstract-font">Yoga Pose of the Day</h1>
         <div class="pose-of-the-day" id="dailyPose">Loading...</div>
+        <h2 class="abstract-font">Breathing Exercise</h2>
+        <p>Relax and follow the rhythm below:</p>
+        <div class="breathing-circle-container">
+            <div class="breathing-circle" id="breathingCircle"></div>
+        </div>
+        <div class="breathing-instruction" id="breathingInstruction">Click Start to Begin</div>
+        <button onclick="startBreathingExercise()">Start</button>
     </div>
 
     <div class="section multi-color-bg" id="sources">
@@ -252,6 +182,28 @@
         function displayPoseOfTheDay() {
             const randomPose = posesOfTheDay[Math.floor(Math.random() * posesOfTheDay.length)];
             document.getElementById('dailyPose').innerText = randomPose;
+        }
+
+        // Breathing Exercise Timer Logic
+        let breathingInterval;
+
+        function startBreathingExercise() {
+            const circle = document.getElementById('breathingCircle');
+            const instruction = document.getElementById('breathingInstruction');
+            let isInhaling = true;
+
+            instruction.innerText = "Inhale...";
+
+            breathingInterval = setInterval(() => {
+                if (isInhaling) {
+                    instruction.innerText = "Exhale...";
+                    circle.style.animation = "breathe 4s ease-out";
+                } else {
+                    instruction.innerText = "Inhale...";
+                    circle.style.animation = "breathe 4s ease-in";
+                }
+                isInhaling = !isInhaling;
+            }, 4000);
         }
 
         function toggleMenu() {
