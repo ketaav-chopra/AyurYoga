@@ -9,12 +9,6 @@
     <title>Ayuryoga - Modern Abstract Design</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <style>
-        /* Adding Sage font */
-        @font-face {
-            font-family: 'Sage';
-            src: url('path-to-font/Sage.ttf') format('truetype'); /* Replace with the actual font file path */
-        }
-
         /* General and layout styles */
         * {
             margin: 0;
@@ -24,15 +18,9 @@
 
         body, html {
             height: 100%;
-            font-family: 'Poppins', sans-serif; /* Default font */
+            font-family: 'Poppins', sans-serif;
             background-color: #f4f4f9;
             overflow-x: hidden;
-        }
-
-        @media (min-width: 768px) {
-            body, html {
-                font-family: 'Sage', sans-serif; /* Use Sage font for desktop */
-            }
         }
 
         .section {
@@ -223,7 +211,7 @@
                 </td>
                 <td>
                     <a href="https://www.canva.com/design/DAGTSGJuhag/D02gpkx14r3cEEtxPBhpAg/view?utm_content=DAGTSGJuhag&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">
-                   Stiff Neck & Neck Pain
+                   stiff Neck & Neck Pain
                     </a>
                 </td>
                 <td>pdf 3</td>
@@ -260,15 +248,17 @@
     <script>
         // Yoga Pose of the Day Logic
         const posesOfTheDay = ['Sun Salutation', 'Lotus Pose', 'Bridge Pose', 'Seated Forward Bend', 'Happy Baby Pose'];
-        const randomIndex = Math.floor(Math.random() * posesOfTheDay.length);
-        const poseElement = document.getElementById('dailyPose');
-        poseElement.innerText = posesOfTheDay[randomIndex];
 
-        // Toggle Mobile Navigation Menu
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+        function displayPoseOfTheDay() {
+            const randomPose = posesOfTheDay[Math.floor(Math.random() * posesOfTheDay.length)];
+            document.getElementById('dailyPose').innerText = randomPose;
         }
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        window.onload = displayPoseOfTheDay;
     </script>
 </body>
 </html>
