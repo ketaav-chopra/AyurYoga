@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <style>
-        
+        /* General and layout styles */
         * {
             margin: 0;
             padding: 0;
@@ -107,7 +107,7 @@
             font-size: 1.2rem;
         }
 
-       
+        /* Mobile Styles */
         @media (max-width: 768px) {
             .menu-icon {
                 display: block;
@@ -129,7 +129,7 @@
             }
         }
 
-      
+        /* Table Styles */
         table {
             width: 80%;
             border-collapse: collapse;
@@ -151,7 +151,7 @@
             background-color: #f4f4f9;
         }
 
-   
+        /* Rotating Circular Containers */
         .rotating-container {
             display: flex;
             justify-content: center;
@@ -201,20 +201,74 @@
         </div>
     </div>
 
+    <div class="section multi-color-bg" id="courses">
+        <h1 class="abstract-font">Our Courses</h1>
+        <table>
+            <tr>
+                <th>1.</th>
+                <th>2.</th>
+                <th>3.</th>
+                <th>4.</th>
+                <th>5.</th>
+            </tr>
+            <tr>
+                <td>
+                    <a href="https://www.canva.com/design/DAGRx-oTENU/ykGefdYl27j36tKPnHi4og/view?utm_content=DAGRx-oTENU&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">
+                        Dandruff & Dry Scalp
+                    </a>
+                </td>
+                <td>
+                    <a href="https://www.canva.com/design/DAGTSGJuhag/D02gpkx14r3cEEtxPBhpAg/view?utm_content=DAGTSGJuhag&utm_campaign=designshare&utm_medium=link&utm_source=editor" target="_blank">
+                        Stiff Neck & Neck Pain
+                    </a>
+                </td>
+                <td>pdf 3</td>
+                <td>pdf 4</td>
+                <td>pdf 5</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section multi-color-bg" id="pose-of-the-day">
+        <h1 class="abstract-font">Yoga Pose of the Day</h1>
+        <div class="pose-of-the-day" id="dailyPose">Loading...</div>
+    </div>
+
+    <div class="section multi-color-bg" id="sources">
+        <h1 class="abstract-font">Our Sources</h1>
+        <h1 class="abstract-font">Click on the images for a surprise!!!</h1>
+        <div class="rotating-container">
+            <div class="circular-container">
+                <a href="https://github.com/ketaav-chopra/Ayuryoga" target="_blank">
+                    <img src="WIN_20241021_20_12_15_Pro.jpg" alt="GitHub Source">
+                </a>
+            </div>
+            <div class="circular-container">
+                <a href="https://www.aryavaidyasala.com/" target="_blank">
+                    <img src="WIN_20241021_20_12_37_Pro.jpg" alt="Arya Vaidya Sala">
+                </a>
+            </div>
+        </div>
+    </div>
 
     <script>
         const posesOfTheDay = ['Sun Salutation', 'Lotus Pose', 'Bridge Pose', 'Seated Forward Bend', 'Happy Baby Pose'];
 
         function displayPoseOfTheDay() {
+            const randomPose = posesOfTheDay[Math
+        function displayPoseOfTheDay() {
             const randomPose = posesOfTheDay[Math.floor(Math.random() * posesOfTheDay.length)];
-            document.getElementById('dailyPose').innerText = randomPose;
+            document.getElementById('dailyPose').textContent = randomPose;
         }
 
         function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
         }
 
-        window.onload = displayPoseOfTheDay;
+        window.onload = function() {
+            displayPoseOfTheDay();
+        }
     </script>
 </body>
 </html>
