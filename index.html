@@ -166,6 +166,24 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        /* Footer Styles */
+        footer {
+            background: #1FAB89;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #FFD93D;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -223,7 +241,6 @@
         </table>
     </div>
 
-    <!-- Yoga Pose of the Day Section -->
     <div class="section multi-color-bg" id="pose-of-the-day">
         <h1 class="abstract-font">Yoga Pose of the Day</h1>
         <div class="pose-of-the-day" id="dailyPose">Loading...</div>
@@ -231,7 +248,7 @@
 
     <div class="section multi-color-bg" id="sources">
         <h1 class="abstract-font">Our Sources</h1>
-    <h1 class="abstract font">Click on the images for a supirse !!!</h1>
+        <h1 class="abstract font">Click on the images for a surprise !!!</h1>
         <div class="rotating-container">
             <div class="circular-container">
                 <a href="https://github.com/ketaav-chopra/Ayuryoga/edit/main/index.html" target="_blank">
@@ -246,20 +263,29 @@
         </div>
     </div>
 
+    <footer>
+        &copy; 2024 Ayuryoga. All rights reserved.
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="disclaimer.html">Disclaimer</a>
+    </footer>
+
     <script>
         // Yoga Pose of the Day Logic
         const posesOfTheDay = ['Sun Salutation', 'Lotus Pose', 'Bridge Pose', 'Seated Forward Bend', 'Happy Baby Pose'];
 
         function displayPoseOfTheDay() {
             const randomPose = posesOfTheDay[Math.floor(Math.random() * posesOfTheDay.length)];
-            document.getElementById('dailyPose').innerText = randomPose;
+            document.getElementById('dailyPose').textContent = randomPose;
         }
 
+        // Navbar toggle logic for mobile view
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
         }
 
-        window.onload = displayPoseOfTheDay;
+        // Run Yoga Pose Logic
+        displayPoseOfTheDay();
     </script>
 </body>
 </html>
