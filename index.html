@@ -1,36 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ayuryoga - Discover a modern approach to yoga with abstract designs and engaging content.">
-    <meta name="keywords" content="Ayuryoga, Yoga, Wellness, Modern Yoga, Yoga Courses, Pose of the Day">
-    <meta name="author" content="Ayuryoga Team">
     <title>Ayuryoga - Modern Abstract Design</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <style>
+        /* General and layout styles */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body,
-        html {
+        body, html {
             height: 100%;
             font-family: 'Poppins', sans-serif;
             background-color: #f4f4f9;
             overflow-x: hidden;
-        }
-
-        .patrick-hand-regular {
-            font-family: "Patrick Hand", serif;
-            font-weight: 400;
-            font-style: normal;
         }
 
         .section {
@@ -40,55 +26,30 @@
             align-items: center;
             text-align: center;
             min-height: 100vh;
-            padding: 10px;
+            padding: 20px;
             color: white;
             transition: background 0.6s ease-in-out;
         }
 
         .abstract-font {
-            font-family: "Patrick Hand", serif;
+            font-family: 'Abril Fatface', cursive;
             font-size: 3rem;
             text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             letter-spacing: 1.5px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             animation: fadeIn 2s ease-in-out forwards;
         }
 
         .multi-color-bg {
-            background: linear-gradient(135deg, #50C878, #8A9A5B, #556B2F, #2A5470, #008080, #98FF98, #87CEEB, #228B22);
+            background: linear-gradient(135deg, #FF6B6B, #FFD93D, #1FAB89, #6225E6);
             background-size: 300% 300%;
             animation: gradientAnimation 10s ease infinite, fadeIn 2s ease-in-out;
         }
 
         @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .legal-section {
-            background: #1d1d1d;
-            color: #f4f4f9;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .legal-links a {
-            color: #FFD93D;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .legal-links a:hover {
-            text-decoration: underline;
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         .pose-of-the-day {
@@ -100,6 +61,7 @@
             font-size: 1.5rem;
         }
 
+        /* Navbar Styles */
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -154,10 +116,60 @@
                 display: flex;
             }
         }
+
+        /* Table Styles */
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+
+        th {
+            background-color: #6225E6;
+            color: white;
+        }
+
+        td {
+            background-color: #f4f4f9;
+        }
+
+        /* Rotating Circular Containers */
+        .rotating-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .circular-container {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+            animation: rotate 5s linear infinite;
+        }
+
+        .circular-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
-
 <body>
+
     <div class="navbar">
         <h1>Ayuryoga</h1>
         <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
@@ -173,7 +185,7 @@
     <div class="section multi-color-bg" id="welcome">
         <h1 class="abstract-font">Welcome to Ayuryoga</h1>
         <div class="image-container">
-            <img src="image_2024-12-29_191250251.png" alt="Ayuryoga Welcome Image" style="width: 70%; height: auto;">
+            <img src="Screenshot 2024-09-24 185853.png" alt="Ayuryoga" style="width: 70%; height: auto;">
         </div>
     </div>
 
@@ -186,17 +198,32 @@
                 <th>3.</th>
                 <th>4.</th>
                 <th>5.</th>
+                <th>6.</th>
+                <th>7.</th>
+                <th>8.</th>
+                <th>9.</th>
+                <th>10.</th>
             </tr>
             <tr>
-                <td><a href="#">Dandruff & Dry Scalp</a></td>
-                <td><a href="#">Stiff Neck</a></td>
-                <td><a href="#">Headaches</a></td>
-                <td><a href="#">Acne</a></td>
-                <td><a href="#">Back Pain</a></td>
+                <td>
+                    <a href="https://ketaav-chopra.github.io/Ayuryoga/assets/pdfs/file:///C:/Users/Ketaav/Downloads/WElCOME%20TO%20AYURYOGA%20(1).pdf" target="_blank">
+                        Neck pain or stiff neck
+                    </a>
+                </td>
+                <td>pdf 2</td>
+                <td>pdf 3</td>
+                <td>pdf 4</td>
+                <td>pdf 5</td>
+                <td>pdf 6</td>
+                <td>pdf 7</td>
+                <td>pdf 8</td>
+                <td>pdf 9</td>
+                <td>pdf 10</td>
             </tr>
         </table>
     </div>
 
+    <!-- Yoga Pose of the Day Section -->
     <div class="section multi-color-bg" id="pose-of-the-day">
         <h1 class="abstract-font">Yoga Pose of the Day</h1>
         <div class="pose-of-the-day" id="dailyPose">Loading...</div>
@@ -204,34 +231,35 @@
 
     <div class="section multi-color-bg" id="sources">
         <h1 class="abstract-font">Our Sources</h1>
-        <div>Links to official resources</div>
+    <h1 class="abstract font">Click on the images for a supirse !!!</h1>
+        <div class="rotating-container">
+            <div class="circular-container">
+                <a href="https://github.com/ketaav-chopra/Ayuryoga/edit/main/index.html" target="_blank">
+                    <img src="WIN_20241021_20_12_15_Pro.jpg" alt="Source 1">
+                </a>
+            </div>
+            <div class="circular-container">
+                <a href="https://www.aryavaidyasala.com/" target="_blank">
+                    <img src="WIN_20241021_20_12_37_Pro.jpg" alt="Source 2">
+                </a>
+            </div>
+        </div>
     </div>
 
-    <!-- Legal Section -->
-    <footer class="legal-section">
-        <p>&copy; 2024 Ayuryoga. All rights reserved.</p>
-        <div class="legal-links">
-            <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
-            <a href="terms-of-service.html" target="_blank">Terms of Service</a>
-            <a href="disclaimer.html" target="_blank">Disclaimer</a>
-        </div>
-    </footer>
-
     <script>
+        // Yoga Pose of the Day Logic
         const posesOfTheDay = ['Sun Salutation', 'Lotus Pose', 'Bridge Pose', 'Seated Forward Bend', 'Happy Baby Pose'];
 
         function displayPoseOfTheDay() {
-            const pose = posesOfTheDay[Math.floor(Math.random() * posesOfTheDay.length)];
-            document.getElementById('dailyPose').innerText = pose;
+            const randomPose = posesOfTheDay[Math.floor(Math.random() * posesOfTheDay.length)];
+            document.getElementById('dailyPose').innerText = randomPose;
         }
 
         function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+            document.getElementById('navLinks').classList.toggle('active');
         }
 
-        displayPoseOfTheDay();
+        window.onload = displayPoseOfTheDay;
     </script>
 </body>
-
 </html>
