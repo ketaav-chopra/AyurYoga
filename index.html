@@ -4,101 +4,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ayuryoga - Legal Information">
-    <meta name="keywords" content="Legal, Privacy, Terms, Ayuryoga, Yoga, Wellness">
+    <meta name="description" content="Ayuryoga - Discover a modern approach to yoga with abstract designs and engaging content.">
+    <meta name="keywords" content="Ayuryoga, Yoga, Wellness, Modern Yoga, Yoga Courses, Pose of the Day">
     <meta name="author" content="Ayuryoga Team">
-    <title>Ayuryoga - Legal Information</title>
+    <title>Ayuryoga - Modern Abstract Design</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
     <style>
-        body, html {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
 
-        .legal-info {
-            padding: 40px;
+        body,
+        html {
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f9;
+            overflow-x: hidden;
+        }
+
+        .patrick-hand-regular {
+            font-family: "Patrick Hand", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
+            min-height: 100vh;
+            padding: 10px;
+            color: white;
+            transition: background 0.6s ease-in-out;
         }
 
         .abstract-font {
             font-family: "Patrick Hand", serif;
-            font-size: 2rem;
+            font-size: 3rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
             letter-spacing: 1.5px;
-            margin-bottom: 20px;
-            color: #1FAB89;
+            margin-bottom: 10px;
+            animation: fadeIn 2s ease-in-out forwards;
         }
 
-        .content {
-            background: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin: 20px;
+        .multi-color-bg {
+            background: linear-gradient(135deg, #50C878, #8A9A5B, #556B2F, #2A5470, #008080, #98FF98, #87CEEB, #228B22);
+            background-size: 300% 300%;
+            animation: gradientAnimation 10s ease infinite, fadeIn 2s ease-in-out;
         }
 
-        .content h2 {
-            color: #1FAB89;
-            margin-bottom: 15px;
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
         }
 
-        .content p {
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        footer {
-            background-color: #1d1d1d;
+        .legal-section {
+            background: #1d1d1d;
             color: #f4f4f9;
             padding: 20px;
             text-align: center;
         }
 
-        footer a {
+        .legal-links a {
             color: #FFD93D;
             text-decoration: none;
+            margin: 0 10px;
         }
 
-        footer a:hover {
+        .legal-links a:hover {
             text-decoration: underline;
+        }
+
+        .pose-of-the-day {
+            margin-top: 40px;
+            padding: 15px;
+            border: 2px solid #FFD93D;
+            border-radius: 5px;
+            background: rgba(255, 217, 61, 0.2);
+            font-size: 1.5rem;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #1FAB89;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .navbar h1 {
+            color: #FFD93D;
+        }
+
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                padding: 10px;
+                border-radius: 5px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
         }
     </style>
 </head>
 
 <body>
-    <div class="legal-info">
-        <h1 class="abstract-font">Legal Information</h1>
-        <div class="content">
-            <h2>Copyright Notice</h2>
-            <p>© 2024 Ayuryoga. All rights reserved.</p>
-            <p>This website, including all its content (text, images, logos, and designs), is protected by copyright law. It is made available under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a> for non-commercial use only unless otherwise stated. For any commercial use or reproduction of any content, please contact us for permission.</p>
-
-            <h2>Website Usage</h2>
-            <p>By using Ayuryoga, you agree to comply with our terms of service. Unauthorized use, copying, or distribution of any content on this website is prohibited unless explicitly allowed under our license terms.</p>
-
-            <h2>Liability Disclaimer</h2>
-            <p>Ayuryoga provides content and services for educational and informational purposes only. We are not responsible for any damages or injuries resulting from the use of our materials or advice. Always consult a qualified professional before undertaking any yoga practices or wellness routines.</p>
-
-            <h2>GitHub Repository and Open-Source Information</h2>
-            <p>The code for Ayuryoga is hosted on <a href="https://github.com/yourusername/ayuryoga" target="_blank">GitHub</a>. This website is part of an open-source project. You are free to view, fork, or contribute to the project under the terms of the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT License</a>.</p>
-
-            <h2>User Agreement</h2>
-            <p>By using this website, you agree not to infringe on our intellectual property or misuse any content. You also consent to our privacy policy, which governs how we collect and use your information.</p>
+    <div class="navbar">
+        <h1>Ayuryoga</h1>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="nav-links" id="navLinks">
+            <a href="#welcome">Welcome</a>
+            <a href="#courses">Our Courses</a>
+            <a href="#pose-of-the-day">Yoga Pose of the Day</a>
+            <a href="#sources">Our Sources</a>
+            <a href="contact.html">Contact Us</a>
         </div>
     </div>
 
-    <footer>
+    <div class="section multi-color-bg" id="welcome">
+        <h1 class="abstract-font">Welcome to Ayuryoga</h1>
+        <div class="image-container">
+            <img src="image_2024-12-29_191250251.png" alt="Ayuryoga Welcome Image" style="width: 70%; height: auto;">
+        </div>
+    </div>
+
+    <div class="section multi-color-bg" id="courses">
+        <h1 class="abstract-font">Our Courses</h1>
+        <table>
+            <tr>
+                <th>1.</th>
+                <th>2.</th>
+                <th>3.</th>
+                <th>4.</th>
+                <th>5.</th>
+            </tr>
+            <tr>
+                <td><a href="#">Dandruff & Dry Scalp</a></td>
+                <td><a href="#">Stiff Neck</a></td>
+                <td><a href="#">Headaches</a></td>
+                <td><a href="#">Acne</a></td>
+                <td><a href="#">Back Pain</a></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="section multi-color-bg" id="pose-of-the-day">
+        <h1 class="abstract-font">Yoga Pose of the Day</h1>
+        <div class="pose-of-the-day" id="dailyPose">Loading...</div>
+    </div>
+
+    <div class="section multi-color-bg" id="sources">
+        <h1 class="abstract-font">Our Sources</h1>
+        <div>Links to official resources</div>
+    </div>
+
+    <!-- Legal Section -->
+    <footer class="legal-section">
         <p>&copy; 2024 Ayuryoga. All rights reserved.</p>
-        <div>
-            <a href="privacy-policy.html" target="_blank">Privacy Policy</a> | 
+        <div class="legal-links">
+            <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
             <a href="terms-of-service.html" target="_blank">Terms of Service</a>
+            <a href="disclaimer.html" target="_blank">Disclaimer</a>
         </div>
     </footer>
+
+    <script>
+        const posesOfTheDay = ['Sun Salutation', 'Lotus Pose', 'Bridge Pose', 'Seated Forward Bend', 'Happy Baby Pose'];
+
+        function displayPoseOfTheDay() {
+            const pose = posesOfTheDay[Math.floor(Math.random() * posesOfTheDay.length)];
+            document.getElementById('dailyPose').innerText = pose;
+        }
+
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        displayPoseOfTheDay();
+    </script>
 </body>
 
 </html>
