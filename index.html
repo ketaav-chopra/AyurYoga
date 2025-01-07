@@ -202,95 +202,32 @@
 
     <div class="section multi-color-bg" id="welcome">
         <h1 class="abstract-font">Welcome to AyurYoga™</h1>
-        <div class="image-container">
-            <img src="image_2024-12-31_164013959.png" alt="Ayuryoga" style="width: 70%; height: auto;">
-        </div>
     </div>
 
     <div class="section multi-color-bg" id="courses">
         <h1 class="abstract-font">Our Courses</h1>
         <table>
             <tr>
-                <th> 1. </th>
-                <th> 2. </th>
-                <th> 3.</th>
-                <th> 4.</th>
-                <th> 5. </th>
-           
+                <th>#</th>
+                <th>Course</th>
             </tr>
             <tr>
-                <td>
-                    <a href="https://www.canva.com/design/DAGTSGJuhag/D02gpkx14r3cEEtxPBhpAg/view?utm_content=DAGTSGJuhag&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hf610b6ed45" target="_blank">
-                    stiff neck
-                    </a>
-                </td>
-                <td>
-                    <a href="https://www.canva.com/design/DAGY0afkZRs/GaKbRsaaaAKP4BpeJMNw6A/view?utm_content=DAGY0afkZRs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hbed80a2ddc" target="_blank">
-                    Headaches (3 types)
-                </td>
-                <td>
-                    <a href="https://www.canva.com/design/DAGRx-oTENU/WpcbqYSLKU3PFQhUucd3PQ/view?utm_content=DAGRx-oTENU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=haaf52c9623" target="_blank">
-                     Dandruff
-                </td>
-                <td>
-                    <a href="https://www.canva.com/design/DAGZ1gvcuQg/yIPzjiop9a7HGPKhuIarVQ/view?utm_content=DAGZ1gvcuQg&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h4ed99f7eb9" target="_blank">
-                        Stomach Gas
-                </td>
-                <td> 
-                    <a href="https://www.canva.com/design/DAGZ1uD_AyU/fFP858748TrgiP-62IVRng/view?utm_content=DAGZ1uD_AyU&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h1150072286" target="_blank">
-                    Acne
-                </a>
-                </td>
-
+                <td>1</td>
+                <td><a href="link1.html">Stiff Neck</a></td>
             </tr>
         </table>
     </div>
 
-    <div class="section multi-color-bg" id="pose-of-the-day">
-        <h1 class="abstract-font">Yoga Pose of the Day</h1>
-        <div class="pose-of-the-day" id="dailyPose">Loading...</div>
-    </div>
-
-    <div class="section multi-color-bg" id="sources">
-        <h1 class="abstract-font">Our Sources</h1>
-        <h1 class="abstract font">Click on the images for a surprise !!!</h1>
-        <div class="rotating-container">
-            <div class="circular-container">
-                <a href="https://github.com/ketaav-chopra/Ayuryoga/edit/main/index.html" target="_blank">
-                    <img src="image_2025-01-07_132459322.png" alt="Source 1">
-                </a>
-            </div>
-            <div class="circular-container">
-                <a href="https://www.aryavaidyasala.com/" target="_blank">
-                    <img src="WIN_20241021_20_12_37_Pro.jpg" alt="Source 2">
-                </a>
-            </div>
-        </div>
-    </div>
-
     <footer>
-        &copy; 2024 Ayuryoga. All rights reserved.
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="terms-of-service.html">Terms of Service</a>
-        <a href="disclaimer.html">Disclaimer</a>
+        &copy; 2024 AyurYoga. All rights reserved.
     </footer>
 
     <script>
-        // Yoga Pose of the Day Logic
-        const posesOfTheDay = ['Sun Salutation', 'Lotus Pose', 'Bridge Pose', 'Seated Forward Bend', 'Happy Baby Pose'];
-
-        function displayPoseOfTheDay() {
-            const randomPose = posesOfTheDay[Math.floor(Math.random() * posesOfTheDay.length)];
-            document.getElementById('dailyPose').textContent = randomPose;
-        }
-
-        // Navbar toggle logic for mobile view
         function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('active');
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
         }
-
-        // Run Yoga Pose Logic
-        displayPoseOfTheDay();
     </script>
+
 </body>
 </html>
