@@ -202,31 +202,54 @@
 
     <div class="section multi-color-bg" id="welcome">
         <h1 class="abstract-font">Welcome to AyurYoga™</h1>
+        <div class="image-container">
+            <img src="image_2024-12-31_164013959.png" alt="Ayuryoga" style="width: 70%; height: auto;">
+        </div>
     </div>
 
     <div class="section multi-color-bg" id="courses">
         <h1 class="abstract-font">Our Courses</h1>
         <table>
             <tr>
-                <th>#</th>
                 <th>Course</th>
+                <th>Link</th>
             </tr>
             <tr>
-                <td>1</td>
-                <td><a href="link1.html">Stiff Neck</a></td>
+                <td>Stiff Neck</td>
+                <td><a href="link1.html">View</a></td>
+            </tr>
+            <tr>
+                <td>Headaches</td>
+                <td><a href="link2.html">View</a></td>
             </tr>
         </table>
     </div>
 
+    <div class="section multi-color-bg" id="pose-of-the-day">
+        <h1 class="abstract-font">Yoga Pose of the Day</h1>
+        <div class="pose-of-the-day" id="dailyPose">Loading...</div>
+    </div>
+
     <footer>
         &copy; 2024 AyurYoga. All rights reserved.
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="disclaimer.html">Disclaimer</a>
     </footer>
 
     <script>
-        function toggleMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
+        const posesOfTheDay = ['Sun Salutation', 'Lotus Pose', 'Bridge Pose', 'Seated Forward Bend', 'Happy Baby Pose'];
+
+        function displayPoseOfTheDay() {
+            const randomPose = posesOfTheDay[Math.floor(Math.random() * posesOfTheDay.length)];
+            document.getElementById('dailyPose').textContent = randomPose;
         }
+
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        displayPoseOfTheDay();
     </script>
 
 </body>
